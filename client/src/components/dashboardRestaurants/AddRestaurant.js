@@ -1,20 +1,30 @@
-import { useState } from 'react'
-import InsertRestaurant from './InsertRestaurantForm'
+import { useState } from "react";
+import InsertRestaurant from "./InsertRestaurantForm";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { Box } from "@mui/material";
 
+function AddRestaurantCard({ returnRestauraunts }) {
+	const [showAddForm, setShowAddForm] = useState(false);
 
-function AddRestaurantCard(props) {
-    const [showAddForm, setShowAddForm] = useState(false);
+	const showForm = () => setShowAddForm(true);
+	const closeForm = () => setShowAddForm(false);
 
-    const handleFormShow = () => setShowAddForm(true);
-    const handleFormClose = () => setShowAddForm(false);
-
-    return (
-        <InsertRestaurant handleFormClose={handleFormClose} showForm={showAddForm} handleInsertNewRestaurant={props.handleInsertNewRestaurant} >
-            {props.children}
-        </InsertRestaurant>
-    )
-
+	return (
+		<Box sx={{ textAlign: "center" }}>
+			<IoIosAddCircleOutline
+				style={{
+					fontSize: "3rem",
+					color: "#FFFFFF",
+				}}
+				onClick={showForm}
+			/>
+			<InsertRestaurant
+				closeForm={closeForm}
+				show={showAddForm}
+				returnRestauraunts={returnRestauraunts}
+			/>
+		</Box>
+	);
 }
 
 export default AddRestaurantCard;
