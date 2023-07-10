@@ -55,10 +55,15 @@ module.exports = {
 		const { body } = req;
 
 		try {
-			const restaurants = await Restaurant.findOneAndUpdate(id, body, {
-				new: true,
-			});
-			console.log(restaurants);
+			const restaurants = await Restaurant.findOneAndUpdate(
+				{ _id: id },
+				body,
+				{
+					new: true,
+					upsert: true,
+				}
+			);
+
 			res.status(200).send(restaurants);
 		} catch (error) {
 			res.status(500).send(error);
