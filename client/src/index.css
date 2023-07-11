@@ -1,10 +1,10 @@
 :root {
 	--accent: #7a2c2c;
 }
+
 /* Reset html */
 * {
 	font-family: system-ui, -apple-system !important;
-	font-size: 62.5%;
 }
 
 html {
