@@ -16,9 +16,7 @@ import {
 	getClicksbyId,
 	getOrdersbyId,
 } from "../axios/API";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import CardImg from "react-bootstrap/esm/CardImg";
+
 import { IoIosAddCircleOutline } from "react-icons/io";
 
 import ViewRestaurants from "../components/dashboardRestaurants/RestaurantsView";
