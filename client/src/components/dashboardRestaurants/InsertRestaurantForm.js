@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import Button from "@mui/material/Button";
+import { Box, Dialog, TextField } from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
+
 
 function InsertRestaurant({ show, closeForm, returnRestauraunts }) {
 	const [title, setTitle] = useState("");
@@ -15,52 +16,43 @@ function InsertRestaurant({ show, closeForm, returnRestauraunts }) {
 
 	return (
 		<>
-			<Modal
-				backdrop="static"
-				keyboard={false}
-				className=""
-				show={show}
-				onHide={closeForm}
+			<Dialog
+				open={show}
+				onClose={closeForm}
+				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
-				<Modal.Header closeButton>
-					<Modal.Title>Add new</Modal.Title>
-				</Modal.Header>
-
-				<Modal.Body>
-					<Form id="editModal">
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className=" text-nowrap text-secondary col-2 my-auto fw-bold text-end pe-2">
-								Title
-							</Form.Label>
-							<Form.Control
-								value={title}
-								onChange={(e) =>
-									setTitle(e.target.value)
-								}
-								type="title"
-								placeholder="title"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-					</Form>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={closeForm}>
-						Close
-					</Button>
-
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Add New</DialogTitle>
+				<form id="editModal">
+					<Box>
+						<label style={{ margin: "1vw", fontWeight: "bold", paddingRight: "4vw" }}>
+							Title
+						</label>
+						<TextField
+							value={title}
+							onChange={(e) =>
+								setTitle(e.target.value)
+							}
+							label="title"
+							sx={{ width: "15vw", pb: "2vh", pr: "2vw" }}
+						/>
+					</Box>
+				</form>
+				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button
-						className=" btn btn-dark"
 						form="Modal"
+						variant="contained"
 						onClick={handleSubmit}
+						type="submit"
+
+						sx={{ mb: "2vh", mt: "2vh", width: "18vw" }}
 					>
 						Insert
 					</Button>
-				</Modal.Footer>
-			</Modal>
+					<Button variant="outlined" onClick={closeForm} sx={{ mb: "3vh", width: "18vw" }} >
+						Close
+					</Button>
+				</Box>
+			</Dialog>
 		</>
 	);
 }
