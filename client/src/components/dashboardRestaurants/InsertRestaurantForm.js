@@ -39,7 +39,6 @@ function InsertRestaurant({ show, closeForm, returnRestauraunts }) {
 				</form>
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button
-						form="Modal"
 						variant="contained"
 						onClick={handleSubmit}
 						type="submit"

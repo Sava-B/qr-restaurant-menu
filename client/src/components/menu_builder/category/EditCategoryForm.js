@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import Button from "@mui/material/Button";
+import { Box, Dialog, TextField } from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
+
 
 function EditCategoryForm(props) {
   const [title, setTitle] = useState(props.title);
@@ -12,36 +13,28 @@ function EditCategoryForm(props) {
 
   return (
     <>
-      <Modal
-        show={props.show}
-        onHide={props.handleClose}
-        backdrop="static"
-        keyboard={false}
+      <Dialog
+        open={props.show}
+        onClose={props.handleClose}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Category</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <Form id="editModal">
-            <Form.Group
-              className="mb-3 d-flex justify-content-start"
-              controlId="formTitle"
-            >
-              <Form.Label className=" text-nowrap text-secondary col-2 my-auto fw-bold text-end pe-2">
-                Title
-              </Form.Label>
-              <Form.Control
-                onChange={handleTitleChange}
-                value={title}
-                type="title"
-                placeholder="title"
-                className=" form-control w-75"
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer className="d-flex flex-row">
+        <DialogTitle variant="h3" color="primary.dark" alignSelf="center">Edit Category</DialogTitle>
+        <form id="editModal">
+          <Box
+            sx={{ mb: '3vh', display: 'flex', justifyContent: "start" }}
+            controlId="formTitle"
+          >
+            <label style={{ margin: "1vw", fontWeight: "bold", paddingRight: "4vw" }}>
+              Title
+            </label>
+            <TextField
+              onChange={handleTitleChange}
+              value={title}
+              label="title"
+              sx={{ width: "15vw", pb: "2vh", pr: "2vw" }}
+            />
+          </Box>
+        </form>
+        <Box sx={{ display: "flex", flexDirection: 'row' }} >
           <Button
             className="btn btn-danger"
             onClick={() => {
@@ -51,24 +44,24 @@ function EditCategoryForm(props) {
             Delete
           </Button>
           <Button
-            className=" btn btn-dark"
-            form="editModal"
+            variant="contained"
             onClick={(e) => {
               props.handleClose();
               e.preventDefault();
               props.updateCategoryForm(props.id, title);
             }}
+            sx={{ mb: "2vh", mt: "2vh", width: "18vw" }}
           >
             Update
           </Button>
           <Button
-            variant="secondary"
+            variant="outlined"
             onClick={props.handleClose}
           >
             Close
           </Button>
-        </Modal.Footer>
-      </Modal>
+        </Box>
+      </Dialog >
     </>
   );
 }

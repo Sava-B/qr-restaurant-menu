@@ -1,7 +1,7 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import InsertSubCategory from "./InsertSubCategory";
 
 function AddSubCategoryCard(props) {
@@ -11,25 +11,25 @@ function AddSubCategoryCard(props) {
     const handleFormShow = () => setShowForm(true);
 
     return (
-        <div>
-            <Col className="d-flex align-items-stretch" style={{ height: '100%' }} onClick={handleFormShow}>
-                <Card style={{ cursor: 'pointer', height: '100%', display: 'flex', gap: '1.5rem' }}>
-                    <Card.Img
-                        variant="top"
-                        src="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
-                        alt="Card image" />
-                    <Card.Body className=" p-0 m-0">
-                        <Card.Title className="text-center fs-4 text-secondary">Add New</Card.Title>
-                    </Card.Body>
-                </Card>
-            </Col>
+        <div style={{ width: '10vw', height: '25svh' }}>
+            <Card sx={{ display: 'flex', alignItems: 'stretch', height: '100%', flexDirection: 'column' }} onClick={handleFormShow}>
+                <CardMedia
+                    variant="top"
+                    component="img"
+                    height="60%"
+                    image="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
+                    alt="Card image" />
+                <CardContent sx={{ p: 0, ml: 2 }}>
+                    <Typography variant="h3" >Add New</Typography>
+                </CardContent>
+            </Card>
 
             <InsertSubCategory
                 showForm={showForm}
                 handleFormClose={handleFormClose}
                 handleInsertNewSubCategory={props.handleInsertNewSubCategory}
             />
-        </div>
+        </div >
     );
 }
 
