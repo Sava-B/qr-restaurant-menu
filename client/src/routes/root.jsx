@@ -17,7 +17,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       background: "#191818",

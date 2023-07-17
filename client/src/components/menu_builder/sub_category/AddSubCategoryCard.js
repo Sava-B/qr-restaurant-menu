@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Col from "react-bootstrap/Col";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import InsertSubCategory from "./InsertSubCategory";
 

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import { Box, Dialog, DialogContent, DialogContentText, TextField } from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+
 
 function InsertSubCategory(props) {
 	const [title, setTitle] = useState("");
@@ -26,84 +29,62 @@ function InsertSubCategory(props) {
 	};
 	return (
 		<>
-			<Modal
-				show={props.showForm}
-				onHide={props.handleFormClose}
-				backdrop="static"
-				keyboard={false}
+			<Dialog
+				open={props.showForm}
+				onClose={props.handleFormClose}
+				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
-				<Modal.Header closeButton>
-					<Modal.Title>Add a new Product</Modal.Title>
-				</Modal.Header>
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Add New Product</DialogTitle>
 
-				<Modal.Body>
-					<Form id="editModal">
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className="  text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Title
-							</Form.Label>
-							<Form.Control
-								onChange={handleTitleChange}
-								value={title}
-								type="title"
-								placeholder="title"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
+				<DialogContent>
+					<DialogContentText sx={{ my: 'auto', fontWeight: 'bold' }}>
+						Title
+					</DialogContentText>
+					<TextField
+						onChange={handleTitleChange}
+						variant="outlined"
+						value={title}
+						type="title"
+						Label="title"
+						className=" form-control w-75"
+					/>
 
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Description
-							</Form.Label>
-							<Form.Control
-								onChange={handleDescriptionChange}
-								value={description}
-								type="text"
-								placeholder="description"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Price
-							</Form.Label>
-							<Form.Control
-								onChange={handlePriceChange}
-								value={price}
-								type="url"
-								placeholder="'10'"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
+					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
+						Description
+					</Form.Label>
+					<Form.Control
+						onChange={handleDescriptionChange}
+						value={description}
+						type="text"
+						placeholder="description"
+						className=" form-control w-75"
+					/>
 
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Img URL
-							</Form.Label>
-							<Form.Control
-								onChange={handleImgURLChange}
-								value={ImgURL}
-								type="url"
-								placeholder="ImgURL"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-					</Form>
-				</Modal.Body>
+					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
+						Price
+					</Form.Label>
+					<Form.Control
+						onChange={handlePriceChange}
+						value={price}
+						type="url"
+						placeholder="'10'"
+						className=" form-control w-75"
+					/>
 
-				<Modal.Footer>
+					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
+						Img URL
+					</Form.Label>
+					<Form.Control
+						onChange={handleImgURLChange}
+						value={ImgURL}
+						type="url"
+						placeholder="ImgURL"
+						className=" form-control w-75"
+					/>
+
+				</DialogContent>
+
+				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button variant="secondary" onClick={props.handleFormClose}>
 						Close
 					</Button>
@@ -120,8 +101,8 @@ function InsertSubCategory(props) {
 					>
 						Update
 					</Button>
-				</Modal.Footer>
-			</Modal>
+				</Box>
+			</Dialog >
 		</>
 	);
 }

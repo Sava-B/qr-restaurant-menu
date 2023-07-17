@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import Button from "@mui/material/Button";
+import { Box, Dialog, DialogContent, DialogContentText, TextField } from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
+
 
 function EditSubCategoryForm(props) {
 	const [title, setTitle] = useState(props.title);
@@ -27,89 +28,72 @@ function EditSubCategoryForm(props) {
 
 	return (
 		<>
-			<Modal
-				show={props.showForm}
-				onHide={props.handleFormClose}
-				backdrop="static"
-				keyboard={false}
+			<Dialog
+				open={props.showForm}
+				onClose={props.handleFormClose}
+				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
-				<Modal.Header closeButton>
-					<Modal.Title>Edit Product</Modal.Title>
-				</Modal.Header>
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Edit Product</DialogTitle>
+				<DialogContent sx={{ width: '20vw', }}>
+					<Box
+						sx={{ mb: '3vh', display: 'flex', justifyContent: "start", flexDirection: "column", alignItems: 'center' }}
+						controlId="formTitle"
+					>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Title
+						</DialogContentText>
+						<TextField
+							onChange={handleTitleChange}
+							variant="outlined"
+							value={title}
+							type="title"
+							Label="title"
+							placeholder="title"
+							sx={{ width: '10vw' }}
+						/>
 
-				<Modal.Body>
-					<Form id="editModal">
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className="  text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Title
-							</Form.Label>
-							<Form.Control
-								onChange={handleTitleChange}
-								value={title}
-								type="title"
-								placeholder="title"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Description
+						</DialogContentText>
+						<TextField
+							onChange={handleDescriptionChange}
+							variant="outlined"
+							value={description}
+							type="text"
+							placeholder="description"
+							sx={{ width: '10vw' }} />
 
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formDescription"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Description
-							</Form.Label>
-							<Form.Control
-								onChange={handleDescriptionChange}
-								value={description}
-								type="text"
-								placeholder="description"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formPrice"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Price
-							</Form.Label>
-							<Form.Control
-								onChange={handlePriceChange}
-								value={price}
-								type="text"
-								placeholder="'10'"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formImg"
-						>
-							<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-								Img URL
-							</Form.Label>
-							<Form.Control
-								onChange={handleImgURLChange}
-								value={image}
-								type="url"
-								placeholder="ImgURL"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-					</Form>
-				</Modal.Body>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Price
+						</DialogContentText>
+						<TextField
+							onChange={handlePriceChange}
+							value={price}
+							type="text"
+							placeholder="'10'"
+							sx={{ width: '10vw' }} />
 
-				<Modal.Footer>
-					<Button variant="secondary" onClick={props.handleFormClose}>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Img URL
+						</DialogContentText>
+						<TextField
+							onChange={handleImgURLChange}
+							value={image}
+							type="url"
+							placeholder="ImgURL"
+							sx={{ width: '10vw' }} />
+					</Box>
+				</DialogContent>
+
+				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: "8vw" }}
+						onClick={props.handleFormClose}>
 						Close
 					</Button>
 					<Button
 						form="editModal"
-						className=" btn btn-primary"
+						variant="outlined"
+						sx={{ mb: "2vh", mt: "2vh", width: "8vw" }}
 						onClick={(e) => {
 							props.handleFormClose();
 							e.preventDefault();
@@ -120,8 +104,8 @@ function EditSubCategoryForm(props) {
 					>
 						Update
 					</Button>
-				</Modal.Footer>
-			</Modal>
+				</Box>
+			</Dialog >
 		</>
 	);
 }
