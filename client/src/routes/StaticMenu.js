@@ -28,9 +28,6 @@ import {
 } from "../axios/API";
 
 
-
-// Look into local storage to get updated data otherwise it needs to be fetched from backend
-
 export default function StaticMenuPage() {
 	const [data, setData] = useState([])
 
@@ -56,14 +53,14 @@ export default function StaticMenuPage() {
 	}, [])
 
 	return (
-		<Box className=" h-100">
+		<Box>
 			<Header />
-			<Box className="container mb-5 mt-3">
-				<Box className="mt-4 d-flex">
-					<h2 className=" pe-3">Categories</h2>
+			<Box sx={{ mb: '5vh', mt: '3vh' }}>
+				<Box sx={{ mt: '4vh' }}>
+					<Typography variant="h2">Categories</Typography>
 				</Box>
 
-				<Box className="d-flex px-4 overflow-auto flex-nowrap w-100 py-3">
+				<Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'no-wrap', width: '100vw', py: '3vh' }}>
 					{categoriesData.map((category) => {
 						return (
 							<StaticCategoryCards
@@ -75,11 +72,11 @@ export default function StaticMenuPage() {
 					})}
 				</Box>
 
-				<Box className="my-4 d-flex">
-					<h2 className=" pe-3">Menu</h2>
+				<Box sx={{ my: '4vh' }}>
+					<Typography variant="h2">Menu</Typography>
 				</Box>
 
-				<Row lg={5} md={2} sm={2} className=" px-4">
+				<Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'no-wrap', width: '100vw', py: '3vh' }}>
 					{data.map((dataObj) => {
 						return (
 							<StaticSubCategoryCards
@@ -92,7 +89,7 @@ export default function StaticMenuPage() {
 							/>
 						);
 					})}
-				</Row>
+				</Box>
 			</Box>
 		</Box>
 	);

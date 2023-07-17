@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import EditSubCategoryForm from "./EditSubCategoryForm";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 function SubCategoryCard(props) {
 	const [showForm, setShowForm] = useState(false);
@@ -12,20 +11,26 @@ function SubCategoryCard(props) {
 
 	return (
 		<div>
-			<Col style={{ cursor: 'pointer', height: '100%' }} onClick={handleFormShow}>
-				<Card style={{ height: '100%', display: 'flex', gap: '1.5rem' }}>
-					<Card.Img variant="top" src={props.image} alt="Card image" />
-					<Card.Body className=" p-0 m-0">
-						<Card.Title className=" text-center fs-4">{props.title}</Card.Title>
+			<Card sx={{ display: 'flex', alignItems: 'stretch', height: '100%', flexDirection: 'column' }} onClick={handleFormShow}>
+				<CardMedia variant="top"
+					component="img"
+					height="60%"
+					image={props.image}
+					alt="Card image" />
+				<CardContent sx={{ p: 0, ml: 2 }}>
+					<Typography variant="h2" sx={{ color: 'primary.verydark' }} >
+						{props.title}
+					</Typography>
 
-						<Card.Text className=" text-center">
-							<p className=" fw-bold fst-normal">{props.price}$</p>
+					<Typography variant="h4" sx={{ color: 'primary.main' }}>
+						{props.price}
+					</Typography>
+					<Typography variant="h6" sx={{ color: 'primary.verydark', pt: '2vh' }}>
+						{props.description}
+					</Typography>
 
-							<p className="text-secondary small">{props.description}</p>
-						</Card.Text>
-					</Card.Body>
-				</Card>
-			</Col>
+				</CardContent>
+			</Card>
 
 			<EditSubCategoryForm
 				title={props.title}

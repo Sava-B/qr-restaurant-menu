@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
 import { Box, Dialog, DialogContent, DialogContentText, TextField } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
@@ -27,6 +25,7 @@ function InsertSubCategory(props) {
 	const handlePriceChange = (e) => {
 		setPrice(e.target.value);
 	};
+
 	return (
 		<>
 			<Dialog
@@ -35,63 +34,66 @@ function InsertSubCategory(props) {
 				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
 				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Add New Product</DialogTitle>
+				<DialogContent sx={{ width: '20vw', }}>
+					<Box
+						sx={{ mb: '3vh', display: 'flex', justifyContent: "start", flexDirection: "column", alignItems: 'center' }}
+						controlId="formTitle"
+					>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Title
+						</DialogContentText>
+						<TextField
+							onChange={handleTitleChange}
+							variant="outlined"
+							value={title}
+							type="title"
+							Label="title"
+							placeholder="title"
+							sx={{ width: '10vw' }}
+						/>
 
-				<DialogContent>
-					<DialogContentText sx={{ my: 'auto', fontWeight: 'bold' }}>
-						Title
-					</DialogContentText>
-					<TextField
-						onChange={handleTitleChange}
-						variant="outlined"
-						value={title}
-						type="title"
-						Label="title"
-						className=" form-control w-75"
-					/>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Description
+						</DialogContentText>
+						<TextField
+							onChange={handleDescriptionChange}
+							variant="outlined"
+							value={description}
+							type="text"
+							placeholder="description"
+							sx={{ width: '10vw' }} />
 
-					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-						Description
-					</Form.Label>
-					<Form.Control
-						onChange={handleDescriptionChange}
-						value={description}
-						type="text"
-						placeholder="description"
-						className=" form-control w-75"
-					/>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Price
+						</DialogContentText>
+						<TextField
+							onChange={handlePriceChange}
+							value={price}
+							type="text"
+							placeholder="'10'"
+							sx={{ width: '10vw' }} />
 
-					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-						Price
-					</Form.Label>
-					<Form.Control
-						onChange={handlePriceChange}
-						value={price}
-						type="url"
-						placeholder="'10'"
-						className=" form-control w-75"
-					/>
-
-					<Form.Label className=" text-start text-nowrap text-secondary col-2 my-auto fw-bold  me-3">
-						Img URL
-					</Form.Label>
-					<Form.Control
-						onChange={handleImgURLChange}
-						value={ImgURL}
-						type="url"
-						placeholder="ImgURL"
-						className=" form-control w-75"
-					/>
-
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+							Img URL
+						</DialogContentText>
+						<TextField
+							onChange={handleImgURLChange}
+							value={ImgURL}
+							type="url"
+							placeholder="ImgURL"
+							sx={{ width: '10vw' }} />
+					</Box>
 				</DialogContent>
-
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-					<Button variant="secondary" onClick={props.handleFormClose}>
+					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: "8vw" }}
+						onClick={props.handleFormClose}>
 						Close
 					</Button>
 
 					<Button
 						form="editModal"
-						className=" btn btn-primary"
+						variant="outlined"
+						sx={{ mb: "2vh", mt: "2vh", width: "8vw" }}
 						onClick={(e) => {
 							e.preventDefault();
 							props.handleFormClose();

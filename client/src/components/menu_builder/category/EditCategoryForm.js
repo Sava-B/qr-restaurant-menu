@@ -36,7 +36,6 @@ function EditCategoryForm(props) {
         </form>
         <Box sx={{ display: "flex", flexDirection: 'row' }} >
           <Button
-            className="btn btn-danger"
             onClick={() => {
               props.handleDelete(props.id);
             }}
@@ -55,7 +54,6 @@ function EditCategoryForm(props) {
             Update
           </Button>
           <Button
-            variant="outlined"
             onClick={props.handleClose}
           >
             Close
