@@ -11,21 +11,23 @@ function SubCategoryCard(props) {
 
 	return (
 		<div>
-			<Card sx={{ display: 'flex', alignItems: 'stretch', height: '100%', flexDirection: 'column' }} onClick={handleFormShow}>
+			<Card sx={{ display: 'flex', alignItems: 'stretch', height: '20vh', width: '10vw', flexDirection: 'column' }} onClick={handleFormShow}>
 				<CardMedia variant="top"
 					component="img"
-					height="60%"
+					height="30%"
 					image={props.image}
 					alt="Card image" />
-				<CardContent sx={{ p: 0, ml: 2 }}>
-					<Typography variant="h2" sx={{ color: 'primary.verydark' }} >
+				<CardContent sx={{ p: 0, ml: 2, whiteSpace: 'pre-wrap' }}>
+					<Typography variant="h5" sx={{ color: 'primary.verydark', fontWeight: 'bold' }} >
 						{props.title}
 					</Typography>
 
-					<Typography variant="h4" sx={{ color: 'primary.main' }}>
-						{props.price}
+					<Typography variant="p" display="block" sx={{ color: 'primary.main', fontWeight: 'light', my: '1vh' }}>
+						${props.price}
+
 					</Typography>
-					<Typography variant="h6" sx={{ color: 'primary.verydark', pt: '2vh' }}>
+
+					<Typography variant="p" sx={{ color: 'primary.verydark', pt: '2vh', }}>
 						{props.description}
 					</Typography>
 

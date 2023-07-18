@@ -7,10 +7,9 @@ import InsertSubCategory from "./menu_builder/sub_category/InsertSubCategory";
 import SubCategoryCard from "./menu_builder/sub_category/SubCategoryCard";
 import AddSubCategoryCard from './menu_builder/sub_category/AddSubCategoryCard'
 import { ThemeProvider } from "@mui/material/styles";
-import Row from "react-bootstrap/Row";
 import axios from "axios";
 import { categoriesData } from "./menu_builder/dummyData";
-import { Button } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { theme } from "../routes/root";
 import {
   getItems,
@@ -130,16 +129,15 @@ function MenuBuilder() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className=" h-100">
+      <Box sx={{ height: '100vh' }}>
         <Header />
 
-        <div className="container mb-5 mt-3">
-          <div className="mt-4 d-flex">
-            <h2 className=" pe-3">Categories</h2>
+        <Container sx={{ mb: '5vh', mt: '3vh', display: 'flex', flexDirection: 'column' }} >
+          <Box sx={{ mt: '4vh', display: 'flex' }}>
+            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal', mb: '2vh' }}>Categories</Typography>
+          </Box>
 
-          </div>
-
-          <div className="d-flex px-4 overflow-auto flex-nowrap w-100 py-3">
+          <Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'nowrap', width: '100vw', py: '3vh' }}>
             {categories.map((category) => {
               return (
                 <CategoryCards
@@ -152,44 +150,49 @@ function MenuBuilder() {
               );
             })}
             <AddCategoryCard handleInsertNewCategory={handleInsertNewCategory} />
-          </div>
+          </Box>
 
-          <div className="my-4 d-flex">
-            <h2 className=" pe-3">Menu</h2>
+          <Box sx={{ my: '4vh', display: 'flex', flexDirection: 'row' }} >
+
+            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal' }}>Menu</Typography>
             <InsertSubCategory
               handleInsertNewSubCategory={handleInsertNewSubCategory}
             />
-          </div>
+          </Box>
 
-          <Row lg={5} md={2} sm={2} className=" px-4 d-flex" style={{ display: 'flex', alignItems: 'stretch' }}>
+          <Grid container spacing={2} sx={{ display: 'flex', alignItems: 'stretch' }}>
             {subCategories.map((dataObj) => {
               return (
-                <SubCategoryCard
-                  key={dataObj.id}
-                  id={dataObj.id}
-                  title={dataObj.name}
-                  description={dataObj.desc}
-                  price={dataObj.price}
-                  image={dataObj.image}
-                  updateSubCategoryForm={updateSubCategoryForm}
-                />
+                <Grid item xs={3} >
+                  <SubCategoryCard
+                    key={dataObj.id}
+                    id={dataObj.id}
+                    title={dataObj.name}
+                    description={dataObj.desc}
+                    price={dataObj.price}
+                    image={dataObj.image}
+                    updateSubCategoryForm={updateSubCategoryForm}
+                  />
+                </Grid>
               );
             })}
-            <AddSubCategoryCard handleInsertNewSubCategory={handleInsertNewSubCategory} />
-          </Row>
+          </Grid>
+          <AddSubCategoryCard handleInsertNewSubCategory={handleInsertNewSubCategory} />
 
-        </div>
+
+        </Container>
         {/* This should save to to the server the new menu*/}
         <Button variant="contained"
           sx={{
             width: "10vw",
             height: "4vh",
             mt: "5vh",
-            ml: '45vw'
+            ml: '45vw',
+            mb: '6vh'
           }}
           onClick={saveData}>Save</Button>
-      </div>
-    </ThemeProvider>
+      </Box>
+    </ThemeProvider >
   );
 }
 

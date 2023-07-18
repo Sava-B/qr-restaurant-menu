@@ -22,7 +22,6 @@ import {
 	subCategoriesData,
 } from "../components/menu_builder/dummyData";
 
-import Row from "react-bootstrap/Row";
 import {
 	getItems
 } from "../axios/API";
@@ -56,7 +55,7 @@ export default function StaticMenuPage() {
 		<Box>
 			<Header />
 			<Box sx={{ mb: '5vh', mt: '3vh' }}>
-				<Box sx={{ mt: '4vh' }}>
+				<Box sx={{ mt: '4vh', ml: '5vw' }}>
 					<Typography variant="h2">Categories</Typography>
 				</Box>
 
@@ -72,7 +71,7 @@ export default function StaticMenuPage() {
 					})}
 				</Box>
 
-				<Box sx={{ my: '4vh' }}>
+				<Box sx={{ my: '4vh', ml: '5vw' }}>
 					<Typography variant="h2">Menu</Typography>
 				</Box>
 

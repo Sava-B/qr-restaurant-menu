@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import EditCategoryForm from './EditCategoryForm';
+import { Box, Typography } from '@mui/material';
 
 function CategoryCards(props) {
   const [showEditModal, setShowEditModal] = useState(false);
@@ -10,13 +11,17 @@ function CategoryCards(props) {
 
   return (
     <>
-      <div className='my-auto'>
-        <h4
+      <Box sx={{ my: 'auto' }}>
+        <Typography
           onClick={handleShow}
-          style={{ cursor: 'pointer' }}
-          className='fw-bold fs-5 border border-2 px-3 py-1 m-2 rounded mt-0'>
+          variant='h4'
+          sx={{
+            fontWeight: 'bold', px: '1vw', py: '1vh', mx: '1vw', color: 'primary.verydark',
+            border: 2, borderRadius: '16px', borderColor: 'grey.500', width: { xs: '30vw', md: '20vw', lg: '8vw', xl: '6vw' }
+          }}
+        >
           {props.title}
-        </h4>
+        </Typography>
         <EditCategoryForm
           id={props.id}
           title={props.title}
@@ -25,7 +30,7 @@ function CategoryCards(props) {
           updateCategoryForm={props.updateCategoryForm}
           handleDelete={props.handleDelete}
         />
-      </div>
+      </Box>
     </>
   )
 }

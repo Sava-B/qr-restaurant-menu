@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 import InsertSubCategory from "./InsertSubCategory";
 
 function AddSubCategoryCard(props) {
@@ -11,7 +11,7 @@ function AddSubCategoryCard(props) {
 
     return (
         <div>
-            <Card sx={{ display: 'flex', alignItems: 'stretch', height: '100%', width: "100%", flexDirection: 'column' }} onClick={handleFormShow}>
+            <Card sx={{ display: 'flex', alignItems: 'stretch', height: '25vh', width: '10vw', flexDirection: 'column', mt: '1vh' }} onClick={handleFormShow}>
                 <CardMedia
                     variant="top"
                     component="img"
@@ -19,7 +19,7 @@ function AddSubCategoryCard(props) {
                     image="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
                     alt="Card image" />
                 <CardContent sx={{ p: 0, ml: 2 }}>
-                    <Typography variant="h3" sx={{ color: 'primary.verydark' }}>Add New</Typography>
+                    <Typography variant="h3" sx={{ color: 'primary.verydark', pt: '2vh' }}>Add New</Typography>
                 </CardContent>
             </Card>
 
@@ -28,7 +28,7 @@ function AddSubCategoryCard(props) {
                 handleFormClose={handleFormClose}
                 handleInsertNewSubCategory={props.handleInsertNewSubCategory}
             />
-        </div >
+        </div>
     );
 }
 
