@@ -11,7 +11,7 @@ function SubCategoryCard(props) {
 
 	return (
 		<div>
-			<Card sx={{ display: 'flex', alignItems: 'stretch', height: '20vh', width: '10vw', flexDirection: 'column' }} onClick={handleFormShow}>
+			<Card sx={{ display: 'flex', alignItems: 'stretch', height: { xs: '50vh', lg: '25vh' }, width: { xs: '50vw', md: '20vw', lg: '10vw' }, flexDirection: 'column' }} onClick={handleFormShow}>
 				<CardMedia variant="top"
 					component="img"
 					height="30%"

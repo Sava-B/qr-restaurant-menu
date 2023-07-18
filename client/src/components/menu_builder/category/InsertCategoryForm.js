@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import { Box, Dialog, TextField } from "@mui/material";
+import { Box, Dialog, DialogContent, TextField, DialogContentText } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 
 function InsertCategory(props) {
@@ -21,23 +21,23 @@ function InsertCategory(props) {
 				open={props.showForm}
 				onClose={props.handleFormClose}
 			>
-				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Add New</DialogTitle>
-				<form id="editModal">
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center" sx={{ pb: '5vh' }}>Add New</DialogTitle>
+				<DialogContent id="editModal">
 					<Box
 						sx={{ mb: '3vh', display: 'flex', justifyContent: "start" }}
 						controlId="formTitle"
 					>
-						<label style={{ margin: "1vw", fontWeight: "bold", paddingRight: "4vw" }}>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh', mr: '2vw' }}>
 							Title
-						</label>
+						</DialogContentText>
 						<TextField
 							onChange={handleTitleChange}
 							value={title}
 							label="title"
-							sx={{ width: "15vw", pb: "2vh", pr: "2vw" }}
+							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' }, pb: "2vh", pr: "2vw" }}
 						/>
 					</Box>
-				</form>
+				</DialogContent>
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button
 						variant="contained"
@@ -48,12 +48,12 @@ function InsertCategory(props) {
 						}}
 						type="submit"
 
-						sx={{ mb: "2vh", mt: "2vh", width: "18vw" }}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: '50vw', md: '40vw', lg: "8vw" } }}
 					>
 						Insert
 					</Button>
 
-					<Button variant="outlined" onClick={props.handleFormClose} sx={{ mb: "3vh", width: "18vw" }} >
+					<Button variant="outlined" onClick={props.handleFormClose} sx={{ mb: "3vh", mt: { lg: "2vh" }, width: { xs: '50vw', md: '40vw', lg: "18vw" } }} >
 						Close
 					</Button>
 
