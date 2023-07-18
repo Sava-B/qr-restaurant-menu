@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { Box, Dialog, TextField } from "@mui/material";
+import { Box, Dialog, DialogContent, TextField, DialogContentText } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 
 
@@ -32,27 +32,27 @@ function EditRestaurantForm({
 				sx={{ maxWidth: "100vw", maxHeight: "100vh" }}
 			>
 				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Edit Restaurant</DialogTitle>
-				<form id="editModal" >
+				<DialogContent >
 					<Box>
-						<label style={{ margin: "1vw", fontWeight: "bold", paddingRight: "4vw", marginLeft: "3vw" }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh", mr: "2vw" }}>
 							{name}
-						</label>
+						</DialogContentText>
 						<TextField
 							value={name}
 							onChange={(e) =>
 								setName(e.target.value)
 							}
 							label="title"
-							sx={{ width: "15vw", pb: "2vh", pr: "2vw", ml: "3vw" }}
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
 						/>
 					</Box>
-				</form>
+				</DialogContent>
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button
 						form="Modal"
 						variant="contained"
 						onClick={deleteRestaurant}
-						sx={{ mt: "2vh", width: "18vw" }}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
 					>
 						Delete
 					</Button>
@@ -61,11 +61,15 @@ function EditRestaurantForm({
 						form="editModal"
 						type="submit"
 						onClick={handleSubmit}
-						sx={{ mb: "2vh", mt: "1vh", width: "18vw" }}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
 					>
 						Update
 					</Button>
-					<Button variant="outlined" onClick={closeForm} sx={{ mb: "3vh", width: "18vw" }}>
+					<Button
+						variant="outlined"
+						onClick={closeForm}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
+					>
 						Close
 					</Button>
 				</Box>

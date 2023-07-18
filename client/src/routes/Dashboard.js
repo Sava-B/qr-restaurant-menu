@@ -174,7 +174,7 @@ const Dashboard = () => {
 				<Paper
 					elevation={20}
 					sx={{
-						height: "45vh",
+						height: { xs: "60vh", md: "50vh", lg: "45vh" },
 						width: "auto",
 						display: "flex",
 						flexDirection: "column",

@@ -19,7 +19,7 @@ const theme = createTheme({
 
 function Copyright() {
 	return (
-		<Typography variant="body2" color="text.secondary" component={'span'}>
+		<Typography variant="body2" color="text.secondary" component={"span"}>
 			{"Copyright © "}
 			<Link color="inherit" href="https://github.com/ajnage/mobile-friendly-menu-generator">
 				QRMenu

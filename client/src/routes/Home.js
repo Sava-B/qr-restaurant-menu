@@ -47,7 +47,7 @@ const Home = () => (
             xs: {
               variant: "h5",
             },
-            fontWeight: 'bold'
+            fontWeight: "bold"
           }}
 
           component={"span"}

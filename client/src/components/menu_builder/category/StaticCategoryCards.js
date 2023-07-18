@@ -1,16 +1,16 @@
 import React from "react";
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
 
 
 function StaticCategoryCards(props) {
 	return (
 		<>
-			<Box sx={{ my: 'auto' }}>
+			<Box sx={{ my: "auto" }}>
 				<Typography
-					variant='h4'
+					variant="h4"
 					sx={{
-						fontWeight: 'bold', px: '1vw', py: '1vh', mx: '1vw', color: 'primary.verydark',
-						border: 2, borderRadius: '16px', borderColor: 'grey.500'
+						fontWeight: "bold", px: "1vw", py: "1vh", mx: "1vw", color: "primary.verydark",
+						border: 2, borderRadius: "16px", borderColor: "grey.500"
 					}}
 				>
 					{props.title}

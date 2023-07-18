@@ -43,7 +43,7 @@ export default function HorizontalNonLinearStepper() {
   const handleNext = () => {
     const newActiveStep =
       isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
+        ? // It"s the last step, but not all steps have been completed,
         // find the first step that has been completed
         steps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
@@ -92,7 +92,7 @@ export default function HorizontalNonLinearStepper() {
         {allStepsCompleted() ? (
           <React.Fragment>
             {/* <ThemeProvider theme={theme}> */}
-            <Typography sx={{ mt: 2, mb: 1, color: "secondary.main" }} component={'span'}>
+            <Typography sx={{ mt: 2, mb: 1, color: "secondary.main" }} component={"span"}>
               All steps completed - you&apos;re finished
             </Typography>
             <Box
@@ -140,7 +140,7 @@ export default function HorizontalNonLinearStepper() {
                   <Typography
                     variant="caption"
                     sx={{ display: "inline-block", color: "secondary.main" }}
-                    component={'span'}
+                    component={"span"}
                   >
                     Step {activeStep + 1} already completed
                   </Typography>

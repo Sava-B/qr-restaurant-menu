@@ -12,7 +12,7 @@ import { Box, Button } from "@mui/material";
 
 export default function SupportPage() {
 	return (
-		<Typography bgcolor="primary.grey" sx={{ pt: '10vh', }}>
+		<Typography bgcolor="primary.grey" sx={{ pt: "10vh", }}>
 			<Container className="supportBody">
 				<Typography
 					component="h1"
@@ -100,7 +100,7 @@ export default function SupportPage() {
 								required
 							></textarea>
 
-							{/* editing the sx prop didn't work for some reason, added inline style instead */}
+							{/* editing the sx prop didn"t work for some reason, added inline style instead */}
 							<Button
 								variant="contained"
 								sx={{ color: "primary.main" }}

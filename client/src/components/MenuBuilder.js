@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import CategoryCards from "./menu_builder/category/CategoryCards";
-import AddCategoryCard from './menu_builder/category/AddCategoryCard'
+import AddCategoryCard from "./menu_builder/category/AddCategoryCard"
 import Header from "./menu_builder/Header";
 import InsertSubCategory from "./menu_builder/sub_category/InsertSubCategory";
 import SubCategoryCard from "./menu_builder/sub_category/SubCategoryCard";
-import AddSubCategoryCard from './menu_builder/sub_category/AddSubCategoryCard'
+import AddSubCategoryCard from "./menu_builder/sub_category/AddSubCategoryCard"
 import { ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { categoriesData } from "./menu_builder/dummyData";
@@ -26,14 +26,14 @@ function MenuBuilder() {
     getItems()
       .then(function (response) {
         // handle success
-        console.log('Here is the response data', response.data);
+        console.log("Here is the response data", response.data);
         const prices = response.data.map(({ price }) =>
           price
         )
-        console.log('Prices: ', prices)
+        console.log("Prices: ", prices)
         setOldSubCats(response.data)
         setSubCategories(response.data)
-        // console.log('data state.price: ', data[1].price)
+        // console.log("data state.price: ", data[1].price)
       })
       .catch(function (error) {
         // handle error
@@ -69,15 +69,15 @@ function MenuBuilder() {
 
     const result = [...onlyInNew];
 
-    console.log('This should save data (placeholder)', result[0].category)
+    console.log("This should save data (placeholder)", result[0].category)
 
-    postItems({ category: 'vegetarian', image: result[0].image, price: result[0].price, desc: result[0].desc, name: result[0].name })
+    postItems({ category: "vegetarian", image: result[0].image, price: result[0].price, desc: result[0].desc, name: result[0].name })
 
-    console.log('works? nah')
+    console.log("works? nah")
   }
 
 
-  // If I remove the 'id' from the props, the new category doesn't have a title
+  // If I remove the "id" from the props, the new category doesn"t have a title
   const handleInsertNewCategory = (id, newTitle) => {
     const newCategory = { id: categories.length + 1, title: newTitle };
     setCategories([...categories, newCategory]);
@@ -110,7 +110,7 @@ function MenuBuilder() {
       return subCategory;
     });
     setSubCategories(updatedSubCategory);
-    console.log('subCategories after updating a subcategory: ', subCategories)
+    console.log("subCategories after updating a subcategory: ", subCategories)
   };
 
   const handleInsertNewSubCategory = (newTitle, newDescription, newPrice, newImgURL) => {
@@ -124,20 +124,20 @@ function MenuBuilder() {
     };
     console.log(newSubCategory);
     setSubCategories([...subCategories, newSubCategory]);
-    console.log('subCategories after making a subcategory: ', subCategories)
+    console.log("subCategories after making a subcategory: ", subCategories)
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ height: '100vh' }}>
+      <Box sx={{ height: "100vh" }}>
         <Header />
 
-        <Container sx={{ mb: '5vh', mt: '3vh', display: 'flex', flexDirection: 'column' }} >
-          <Box sx={{ mt: '4vh', display: 'flex' }}>
-            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal', mb: '2vh' }}>Categories</Typography>
+        <Container sx={{ mb: "5vh", mt: "3vh", display: "flex", flexDirection: "column" }} >
+          <Box sx={{ mt: "4vh", display: "flex" }}>
+            <Typography variant="h2" sx={{ color: "primary.verydark", fontWeight: "normal", mb: "2vh" }}>Categories</Typography>
           </Box>
 
-          <Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'nowrap', width: '100vw', py: '3vh' }}>
+          <Box sx={{ display: "flex", px: "4vw", overflow: "auto", flex: "nowrap", width: "100vw", py: "3vh" }}>
             {categories.map((category) => {
               return (
                 <CategoryCards
@@ -152,15 +152,15 @@ function MenuBuilder() {
             <AddCategoryCard handleInsertNewCategory={handleInsertNewCategory} />
           </Box>
 
-          <Box sx={{ my: '4vh', display: 'flex', flexDirection: 'row' }} >
+          <Box sx={{ my: "4vh", display: "flex", flexDirection: "row" }} >
 
-            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal' }}>Menu</Typography>
+            <Typography variant="h2" sx={{ color: "primary.verydark", fontWeight: "normal" }}>Menu</Typography>
             <InsertSubCategory
               handleInsertNewSubCategory={handleInsertNewSubCategory}
             />
           </Box>
 
-          <Grid container spacing={2} sx={{ display: 'flex', alignItems: 'stretch' }}>
+          <Grid container spacing={2} sx={{ display: "flex", alignItems: "stretch" }}>
             {subCategories.map((dataObj) => {
               return (
                 <Grid item xs={3} >
@@ -187,8 +187,8 @@ function MenuBuilder() {
             width: "10vw",
             height: "4vh",
             mt: "5vh",
-            ml: '45vw',
-            mb: '6vh'
+            ml: "45vw",
+            mb: "6vh"
           }}
           onClick={saveData}>Save</Button>
       </Box>

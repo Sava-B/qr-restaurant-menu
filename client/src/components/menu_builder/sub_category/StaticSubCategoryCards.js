@@ -15,13 +15,13 @@ function StaticSubCategoryCards(props) {
 		getItems()
 			.then(function (response) {
 				// handle success
-				console.log('Here is the response data', response.data);
+				console.log("Here is the response data", response.data);
 				const prices = response.data.map(({ price }) =>
 					price
 				)
-				console.log('Prices: ', prices)
+				console.log("Prices: ", prices)
 				setData(response.data)
-				// console.log('data state.price: ', data[1].price)
+				// console.log("data state.price: ", data[1].price)
 			})
 			.catch(function (error) {
 				// handle error
@@ -33,21 +33,21 @@ function StaticSubCategoryCards(props) {
 	}, [])
 
 	return (
-		<Card sx={{ display: 'flex', alignItems: 'stretch', height: '100%', flexDirection: 'column' }} >
+		<Card sx={{ display: "flex", alignItems: "stretch", height: "100%", flexDirection: "column" }} >
 			<CardMedia variant="top"
 				component="img"
 				height="60%"
 				image={props.image}
 				alt="Card image" />
 			<CardContent sx={{ p: 0, ml: 2 }}>
-				<Typography variant="h2" sx={{ color: 'primary.verydark' }} >
+				<Typography variant="h2" sx={{ color: "primary.verydark" }} >
 					{props.title}
 				</Typography>
 
-				<Typography variant="h4" sx={{ color: 'primary.main' }}>
+				<Typography variant="h4" sx={{ color: "primary.main" }}>
 					{props.price}
 				</Typography>
-				<Typography variant="h6" sx={{ color: 'primary.verydark', pt: '2vh' }}>
+				<Typography variant="h6" sx={{ color: "primary.verydark", pt: "2vh" }}>
 					{props.description}
 				</Typography>
 

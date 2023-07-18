@@ -1,15 +1,15 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box } from "@mui/material"
+import React from "react"
 
 function Header() {
     return (
         <>
             {/* HEADER - BACKGROUND - PHOTO */}
-            <Box sx={{ height: '25vh', position: 'relative' }}>
+            <Box sx={{ height: "25vh", position: "relative" }}>
 
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                     <Box
-                        sx={{ position: 'relative', borderRadius: '100' }}
+                        sx={{ position: "relative", borderRadius: "100" }}
                         style={{
                             height: "calc(10vw + 3rem)",
                             width: "100vw",

@@ -1,9 +1,9 @@
 import { useReducer } from "react";
 
 const ACTIONS = {
-  ADD_ITEM: 'ADD_ITEM',
-  GET_ITEMS: 'GET_ITEMS',
-  DELETE_ITEMS: 'DELETE_ITEMS'
+  ADD_ITEM: "ADD_ITEM",
+  GET_ITEMS: "GET_ITEMS",
+  DELETE_ITEMS: "DELETE_ITEMS"
 }
 
 const reducer = (state, action) => {

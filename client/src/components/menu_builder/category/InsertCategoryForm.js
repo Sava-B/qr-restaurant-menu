@@ -21,20 +21,20 @@ function InsertCategory(props) {
 				open={props.showForm}
 				onClose={props.handleFormClose}
 			>
-				<DialogTitle variant="h3" color="primary.dark" alignSelf="center" sx={{ pb: '5vh' }}>Add New</DialogTitle>
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center" sx={{ pb: "5vh" }}>Add New</DialogTitle>
 				<DialogContent id="editModal">
 					<Box
-						sx={{ mb: '3vh', display: 'flex', justifyContent: "start" }}
+						sx={{ mb: "3vh", display: "flex", justifyContent: "start" }}
 						controlId="formTitle"
 					>
-						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh', mr: '2vw' }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh", mr: "2vw" }}>
 							Title
 						</DialogContentText>
 						<TextField
 							onChange={handleTitleChange}
 							value={title}
 							label="title"
-							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' }, pb: "2vh", pr: "2vw" }}
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
 						/>
 					</Box>
 				</DialogContent>
@@ -48,12 +48,12 @@ function InsertCategory(props) {
 						}}
 						type="submit"
 
-						sx={{ mb: "2vh", mt: "2vh", width: { xs: '50vw', md: '40vw', lg: "8vw" } }}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
 					>
 						Insert
 					</Button>
 
-					<Button variant="outlined" onClick={props.handleFormClose} sx={{ mb: "3vh", mt: { lg: "2vh" }, width: { xs: '50vw', md: '40vw', lg: "18vw" } }} >
+					<Button variant="outlined" onClick={props.handleFormClose} sx={{ mb: "3vh", mt: { lg: "2vh" }, width: { xs: "50vw", md: "40vw", lg: "18vw" } }} >
 						Close
 					</Button>
 

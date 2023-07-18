@@ -51,7 +51,7 @@ export default function FreeTrialPage() {
       >
         {" "}
         <Typography
-          sx={{ pt: '10vh' }}
+          sx={{ pt: "10vh" }}
           component="h1"
           variant="h2"
           align="center"
@@ -103,8 +103,8 @@ export default function FreeTrialPage() {
         elevation={20}
         sx={{
           overflowX: "none !important",
-          mt: { xs: '100vh', md: '100vh', l: "30vh", xl: "30vh" },
-          mb: '40vh',
+          mt: { xs: "100vh", md: "100vh", l: "30vh", xl: "30vh" },
+          mb: "40vh",
           height: "100vh",
           ml: "0.3vw",
           background: "linear-gradient(45deg, #7a2c2c 30%, #222 90%)",

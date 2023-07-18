@@ -79,9 +79,9 @@ function PricingContent() {
   return (
     <React.Fragment>
       <Container
-        sx={{ pt: '10vh', bgcolor: "primary.grey", width: "auto", height: { xs: "100%", xl: '100vh' } }}
+        sx={{ pt: "10vh", bgcolor: "primary.grey", width: "auto", height: { xs: "100%", xl: "100vh" } }}
       >
-        <Typography bgcolor="primary.grey" component={'span'}>
+        <Typography bgcolor="primary.grey" component={"span"}>
           <AppBar
             position="static"
             color="default"

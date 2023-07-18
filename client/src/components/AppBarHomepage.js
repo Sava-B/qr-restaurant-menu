@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ mb: '-8vh' }}>
+    <AppBar position="sticky" sx={{ mb: "-8vh" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
@@ -91,10 +91,10 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Link to={'/'} className="text-link" >
+          <Link to={"/"} className="text-link" >
             {" "}
             <img
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1, ml: { xs: '-10' } }}
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1, ml: { xs: "-10" } }}
               width={"27%"}
               src={QR}
               alt={"Menu maker app logo"}

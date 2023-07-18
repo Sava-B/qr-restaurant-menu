@@ -11,7 +11,7 @@ function AddSubCategoryCard(props) {
 
     return (
         <div>
-            <Card sx={{ display: 'flex', alignItems: 'stretch', height: { xs: '50vh', lg: '25vh' }, width: { xs: '50vw', md: '20vw', lg: '10vw' }, flexDirection: 'column', mt: '1vh' }} onClick={handleFormShow}>
+            <Card sx={{ display: "flex", alignItems: "stretch", height: { xs: "50vh", lg: "25vh" }, width: { xs: "50vw", md: "20vw", lg: "10vw" }, flexDirection: "column", mt: "1vh" }} onClick={handleFormShow}>
                 <CardMedia
                     variant="top"
                     component="img"
@@ -19,7 +19,7 @@ function AddSubCategoryCard(props) {
                     image="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
                     alt="Card image" />
                 <CardContent sx={{ p: 0, ml: 2 }}>
-                    <Typography variant="h3" sx={{ color: 'primary.verydark', pt: '2vh' }}>Add New</Typography>
+                    <Typography variant="h3" sx={{ color: "primary.verydark", pt: "2vh" }}>Add New</Typography>
                 </CardContent>
             </Card>
 

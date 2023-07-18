@@ -34,12 +34,12 @@ function EditSubCategoryForm(props) {
 				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
 				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Edit Product</DialogTitle>
-				<DialogContent sx={{ width: { xs: '60vw', lg: '20vw', } }}>
+				<DialogContent sx={{ width: { xs: "60vw", lg: "20vw", } }}>
 					<Box
-						sx={{ mb: '3vh', display: 'flex', justifyContent: "start", flexDirection: "column", alignItems: 'center' }}
+						sx={{ mb: "3vh", display: "flex", justifyContent: "start", flexDirection: "column", alignItems: "center" }}
 						controlId="formTitle"
 					>
-						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
 							Title
 						</DialogContentText>
 						<TextField
@@ -49,10 +49,10 @@ function EditSubCategoryForm(props) {
 							type="title"
 							Label="title"
 							placeholder="title"
-							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' } }}
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }}
 						/>
 
-						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
 							Description
 						</DialogContentText>
 						<TextField
@@ -61,9 +61,9 @@ function EditSubCategoryForm(props) {
 							value={description}
 							type="text"
 							placeholder="description"
-							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' } }} />
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
 
-						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
 							Price
 						</DialogContentText>
 						<TextField
@@ -71,9 +71,9 @@ function EditSubCategoryForm(props) {
 							value={price}
 							type="text"
 							placeholder="'10'"
-							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' } }} />
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
 
-						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh' }}>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
 							Img URL
 						</DialogContentText>
 						<TextField
@@ -81,19 +81,19 @@ function EditSubCategoryForm(props) {
 							value={image}
 							type="url"
 							placeholder="ImgURL"
-							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' } }} />
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
 					</Box>
 				</DialogContent>
 
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: { xs: '50vw', md: '40vw', lg: "8vw" } }}
+					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
 						onClick={props.handleFormClose}>
 						Close
 					</Button>
 					<Button
 						form="editModal"
 						variant="outlined"
-						sx={{ mb: "2vh", mt: { lg: "2vh" }, width: { xs: '50vw', md: '40vw', lg: "8vw" } }}
+						sx={{ mb: "2vh", mt: { lg: "2vh" }, width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
 						onClick={(e) => {
 							props.handleFormClose();
 							e.preventDefault();

@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { Box, Button, Paper } from "@mui/material";
 import { AppButton } from "../components/AppButton";
-import axios from 'axios';
+import axios from "axios";
 
 import StaticCategoryCards from "../components/menu_builder/category/StaticCategoryCards";
 import InsertCategory from "../components/menu_builder/category/InsertCategoryForm";
@@ -34,13 +34,13 @@ export default function StaticMenuPage() {
 		getItems()
 			.then(function (response) {
 				// handle success
-				console.log('Here is the response data', response.data);
+				console.log("Here is the response data", response.data);
 				const prices = response.data.map(({ price }) =>
 					price
 				)
-				console.log('Prices: ', prices)
+				console.log("Prices: ", prices)
 				setData(response.data)
-				// console.log('data state.price: ', data[1].price)
+				// console.log("data state.price: ", data[1].price)
 			})
 			.catch(function (error) {
 				// handle error
@@ -54,12 +54,12 @@ export default function StaticMenuPage() {
 	return (
 		<Box>
 			<Header />
-			<Box sx={{ mb: '5vh', mt: '3vh' }}>
-				<Box sx={{ mt: '4vh', ml: '5vw' }}>
+			<Box sx={{ mb: "5vh", mt: "3vh" }}>
+				<Box sx={{ mt: "4vh", ml: "5vw" }}>
 					<Typography variant="h2">Categories</Typography>
 				</Box>
 
-				<Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'no-wrap', width: '100vw', py: '3vh' }}>
+				<Box sx={{ display: "flex", px: "4vw", overflow: "auto", flex: "no-wrap", width: "100vw", py: "3vh" }}>
 					{categoriesData.map((category) => {
 						return (
 							<StaticCategoryCards
@@ -71,11 +71,11 @@ export default function StaticMenuPage() {
 					})}
 				</Box>
 
-				<Box sx={{ my: '4vh', ml: '5vw' }}>
+				<Box sx={{ my: "4vh", ml: "5vw" }}>
 					<Typography variant="h2">Menu</Typography>
 				</Box>
 
-				<Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'no-wrap', width: '100vw', py: '3vh' }}>
+				<Box sx={{ display: "flex", px: "4vw", overflow: "auto", flex: "no-wrap", width: "100vw", py: "3vh" }}>
 					{data.map((dataObj) => {
 						return (
 							<StaticSubCategoryCards
