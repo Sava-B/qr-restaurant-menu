@@ -1,7 +1,6 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
+import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 import InsertSubCategory from "./InsertSubCategory";
 
 function AddSubCategoryCard(props) {
@@ -12,17 +11,17 @@ function AddSubCategoryCard(props) {
 
     return (
         <div>
-            <Col className="d-flex align-items-stretch" style={{ height: '100%' }} onClick={handleFormShow}>
-                <Card style={{ cursor: 'pointer', height: '100%', display: 'flex', gap: '1.5rem' }}>
-                    <Card.Img
-                        variant="top"
-                        src="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
-                        alt="Card image" />
-                    <Card.Body className=" p-0 m-0">
-                        <Card.Title className="text-center fs-4 text-secondary">Add New</Card.Title>
-                    </Card.Body>
-                </Card>
-            </Col>
+            <Card sx={{ display: 'flex', alignItems: 'stretch', height: { xs: '50vh', lg: '25vh' }, width: { xs: '50vw', md: '20vw', lg: '10vw' }, flexDirection: 'column', mt: '1vh' }} onClick={handleFormShow}>
+                <CardMedia
+                    variant="top"
+                    component="img"
+                    height="60%"
+                    image="https://static.vecteezy.com/system/resources/thumbnails/001/500/603/small/add-icon-free-vector.jpg"
+                    alt="Card image" />
+                <CardContent sx={{ p: 0, ml: 2 }}>
+                    <Typography variant="h3" sx={{ color: 'primary.verydark', pt: '2vh' }}>Add New</Typography>
+                </CardContent>
+            </Card>
 
             <InsertSubCategory
                 showForm={showForm}

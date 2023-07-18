@@ -4,8 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
 
 import Root from "./routes/root";
 import ErrorPage from "./error-page";

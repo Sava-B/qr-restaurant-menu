@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import Button from "@mui/material/Button";
+import { Box, Dialog, DialogContent, TextField, DialogContentText } from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
 
 function InsertCategory(props) {
 	const [title, setTitle] = useState("");
@@ -17,54 +17,49 @@ function InsertCategory(props) {
 
 	return (
 		<>
-			<Modal
-				backdrop="static"
-				keyboard={false}
-				className=""
-				show={props.showForm}
-				onHide={props.handleFormClose}
+			<Dialog
+				open={props.showForm}
+				onClose={props.handleFormClose}
 			>
-				<Modal.Header closeButton>
-					<Modal.Title>Add new</Modal.Title>
-				</Modal.Header>
-
-				<Modal.Body>
-					<Form id="editModal">
-						<Form.Group
-							className="mb-3 d-flex justify-content-start"
-							controlId="formTitle"
-						>
-							<Form.Label className=" text-nowrap text-secondary col-2 my-auto fw-bold text-end pe-2">
-								Title
-							</Form.Label>
-							<Form.Control
-								value={title}
-								onChange={handleTitleChange}
-								type="title"
-								placeholder="title"
-								className=" form-control w-75"
-							/>
-						</Form.Group>
-					</Form>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={props.handleFormClose}>
-						Close
-					</Button>
-
+				<DialogTitle variant="h3" color="primary.dark" alignSelf="center" sx={{ pb: '5vh' }}>Add New</DialogTitle>
+				<DialogContent id="editModal">
+					<Box
+						sx={{ mb: '3vh', display: 'flex', justifyContent: "start" }}
+						controlId="formTitle"
+					>
+						<DialogContentText sx={{ my: 'auto', fontWeight: 'bold', pt: '2vh', mr: '2vw' }}>
+							Title
+						</DialogContentText>
+						<TextField
+							onChange={handleTitleChange}
+							value={title}
+							label="title"
+							sx={{ width: { xs: '60vw', md: '30vw', lg: '10vw' }, pb: "2vh", pr: "2vw" }}
+						/>
+					</Box>
+				</DialogContent>
+				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button
-						className=" btn btn-dark"
-						form="Modal"
+						variant="contained"
 						onClick={(e) => {
 							props.handleFormClose();
 							e.preventDefault();
 							props.handleInsertNewCategory(props.id, title);
 						}}
+						type="submit"
+
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: '50vw', md: '40vw', lg: "8vw" } }}
 					>
 						Insert
 					</Button>
-				</Modal.Footer>
-			</Modal>
+
+					<Button variant="outlined" onClick={props.handleFormClose} sx={{ mb: "3vh", mt: { lg: "2vh" }, width: { xs: '50vw', md: '40vw', lg: "18vw" } }} >
+						Close
+					</Button>
+
+
+				</Box>
+			</Dialog>
 		</>
 	);
 }

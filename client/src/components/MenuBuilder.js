@@ -6,12 +6,11 @@ import Header from "./menu_builder/Header";
 import InsertSubCategory from "./menu_builder/sub_category/InsertSubCategory";
 import SubCategoryCard from "./menu_builder/sub_category/SubCategoryCard";
 import AddSubCategoryCard from './menu_builder/sub_category/AddSubCategoryCard'
-
-import Row from "react-bootstrap/Row";
+import { ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { categoriesData } from "./menu_builder/dummyData";
-import { Button } from "@mui/material";
-
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { theme } from "../routes/root";
 import {
   getItems,
   postItems
@@ -129,65 +128,71 @@ function MenuBuilder() {
   };
 
   return (
-    <div className=" h-100">
-      <Header />
+    <ThemeProvider theme={theme}>
+      <Box sx={{ height: '100vh' }}>
+        <Header />
 
-      <div className="container mb-5 mt-3">
-        <div className="mt-4 d-flex">
-          <h2 className=" pe-3">Categories</h2>
+        <Container sx={{ mb: '5vh', mt: '3vh', display: 'flex', flexDirection: 'column' }} >
+          <Box sx={{ mt: '4vh', display: 'flex' }}>
+            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal', mb: '2vh' }}>Categories</Typography>
+          </Box>
 
-        </div>
+          <Box sx={{ display: 'flex', px: '4vw', overflow: 'auto', flex: 'nowrap', width: '100vw', py: '3vh' }}>
+            {categories.map((category) => {
+              return (
+                <CategoryCards
+                  key={category.id}
+                  id={category.id}
+                  title={category.title}
+                  updateCategoryForm={updateCategoryForm}
+                  handleDelete={handleDelete}
+                />
+              );
+            })}
+            <AddCategoryCard handleInsertNewCategory={handleInsertNewCategory} />
+          </Box>
 
-        <div className="d-flex px-4 overflow-auto flex-nowrap w-100 py-3">
-          {categories.map((category) => {
-            return (
-              <CategoryCards
-                key={category.id}
-                id={category.id}
-                title={category.title}
-                updateCategoryForm={updateCategoryForm}
-                handleDelete={handleDelete}
-              />
-            );
-          })}
-          <AddCategoryCard handleInsertNewCategory={handleInsertNewCategory} />
-        </div>
+          <Box sx={{ my: '4vh', display: 'flex', flexDirection: 'row' }} >
 
-        <div className="my-4 d-flex">
-          <h2 className=" pe-3">Menu</h2>
-          <InsertSubCategory
-            handleInsertNewSubCategory={handleInsertNewSubCategory}
-          />
-        </div>
+            <Typography variant="h2" sx={{ color: 'primary.verydark', fontWeight: 'normal' }}>Menu</Typography>
+            <InsertSubCategory
+              handleInsertNewSubCategory={handleInsertNewSubCategory}
+            />
+          </Box>
 
-        <Row lg={5} md={2} sm={2} className=" px-4 d-flex" style={{ display: 'flex', alignItems: 'stretch' }}>
-          {subCategories.map((dataObj) => {
-            return (
-              <SubCategoryCard
-                key={dataObj.id}
-                id={dataObj.id}
-                title={dataObj.name}
-                description={dataObj.desc}
-                price={dataObj.price}
-                image={dataObj.image}
-                updateSubCategoryForm={updateSubCategoryForm}
-              />
-            );
-          })}
+          <Grid container spacing={2} sx={{ display: 'flex', alignItems: 'stretch' }}>
+            {subCategories.map((dataObj) => {
+              return (
+                <Grid item xs={3} >
+                  <SubCategoryCard
+                    key={dataObj.id}
+                    id={dataObj.id}
+                    title={dataObj.name}
+                    description={dataObj.desc}
+                    price={dataObj.price}
+                    image={dataObj.image}
+                    updateSubCategoryForm={updateSubCategoryForm}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
           <AddSubCategoryCard handleInsertNewSubCategory={handleInsertNewSubCategory} />
-        </Row>
 
-      </div>
-      {/* This should save to to the server the new menu*/}
-      <Button variant="contained"
-        sx={{
-          width: "10vw",
-          height: "4vh",
-          mt: "5vh",
-          ml: '45vw'
-        }}
-        onClick={saveData}>Save</Button>
-    </div>
+
+        </Container>
+        {/* This should save to to the server the new menu*/}
+        <Button variant="contained"
+          sx={{
+            width: "10vw",
+            height: "4vh",
+            mt: "5vh",
+            ml: '45vw',
+            mb: '6vh'
+          }}
+          onClick={saveData}>Save</Button>
+      </Box>
+    </ThemeProvider >
   );
 }
 

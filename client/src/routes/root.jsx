@@ -12,12 +12,11 @@ import { Outlet } from "react-router-dom";
 import StickyFooter from "../components/StickyFooter";
 // import { AppBar } from "@mui/material";
 import { Box, Typography } from "@mui/material";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       background: "#191818",
