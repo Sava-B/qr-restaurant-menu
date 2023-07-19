@@ -19,12 +19,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 export const theme = createTheme({
   palette: {
     primary: {
-      background: "#191818",
+      background: "#D3D0C8",
       // 00ccff
-      main: "#7a2c2c",
-      verydark: "#222",
+      main: "#C4B487",
+      verydark: "#262524",
       // grey: "#808080"
-      grey: "#575757",
+      grey: "#D3D0C8",
     },
     secondary: {
       main: "#FFFFFF",
@@ -86,38 +86,38 @@ export const theme = createTheme({
       fontSize: 12,
     },
     body1: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     body2: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h1: {
       fontSize: 100,
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h2: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h3: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h4: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h5: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     h6: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     overline: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     caption: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
     p: {
-      color: "#FFFFFF",
+      color: "#545451",
     },
   },
 });

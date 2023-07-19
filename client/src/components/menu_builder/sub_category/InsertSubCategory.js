@@ -71,7 +71,7 @@ function InsertSubCategory(props) {
 							onChange={handlePriceChange}
 							value={price}
 							type="text"
-							placeholder=""10""
+							placeholder="10"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
 
 						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>

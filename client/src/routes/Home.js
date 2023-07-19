@@ -16,7 +16,7 @@ const h1style = { color: "white", left: "30px" };
 // Add light background, dark text
 
 const Home = () => (
-  <Box bgcolor={"primary.verydark"} sx={{ pb: "10vh", mt: "8vh" }}>
+  <Box sx={{ pb: "10vh", mt: "8vh" }}>
     <div className="App">
       <link
         rel="stylesheet"

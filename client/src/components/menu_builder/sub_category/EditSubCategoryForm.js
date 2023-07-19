@@ -4,33 +4,40 @@ import { Box, Dialog, DialogContent, DialogContentText, TextField } from "@mui/m
 import DialogTitle from "@mui/material/DialogTitle";
 
 
-function EditSubCategoryForm(props) {
-	const [title, setTitle] = useState(props.title);
-	const [description, setDescription] = useState(props.description);
-	const [image, setImgURL] = useState(props.image);
-	const [price, setPrice] = useState(props.price)
+function EditSubCategoryForm({ id, title, description, image, price, updateSubCategoryForm, handleDelete, handleFormClose, showForm }) {
+	const [newTitle, setNewTitle] = useState(title);
+	const [newDescription, setNewDescription] = useState(description);
+	const [newImage, setNewImage] = useState(image);
+	const [newPrice, setNewPrice] = useState(price)
 
 	const handleTitleChange = (e) => {
-		setTitle(e.target.value);
+		setNewTitle(e.target.value);
 	};
 
 	const handleDescriptionChange = (e) => {
-		setDescription(e.target.value);
+		setNewDescription(e.target.value);
 	};
 
 	const handleImgURLChange = (e) => {
-		setImgURL(e.target.value);
+		setNewImage(e.target.value);
 	};
 
 	const handlePriceChange = (e) => {
-		setPrice(e.target.value);
+		setNewPrice(e.target.value);
+	};
+
+	const handleSubmit = (e) => {
+		handleFormClose();
+		e.preventDefault();
+		updateSubCategoryForm(id, newTitle, newDescription, newPrice, newImage);
+		console.log(`id = ${id}`);
 	};
 
 	return (
 		<>
 			<Dialog
-				open={props.showForm}
-				onClose={props.handleFormClose}
+				open={showForm}
+				onClose={handleFormClose}
 				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
 				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Edit Product</DialogTitle>
@@ -45,7 +52,7 @@ function EditSubCategoryForm(props) {
 						<TextField
 							onChange={handleTitleChange}
 							variant="outlined"
-							value={title}
+							value={newTitle}
 							type="title"
 							Label="title"
 							placeholder="title"
@@ -58,7 +65,7 @@ function EditSubCategoryForm(props) {
 						<TextField
 							onChange={handleDescriptionChange}
 							variant="outlined"
-							value={description}
+							value={newDescription}
 							type="text"
 							placeholder="description"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
@@ -68,7 +75,7 @@ function EditSubCategoryForm(props) {
 						</DialogContentText>
 						<TextField
 							onChange={handlePriceChange}
-							value={price}
+							value={newPrice}
 							type="text"
 							placeholder="'10'"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
@@ -78,7 +85,7 @@ function EditSubCategoryForm(props) {
 						</DialogContentText>
 						<TextField
 							onChange={handleImgURLChange}
-							value={image}
+							value={newImage}
 							type="url"
 							placeholder="ImgURL"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
@@ -87,22 +94,24 @@ function EditSubCategoryForm(props) {
 
 				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
-						onClick={props.handleFormClose}>
+						onClick={handleFormClose}>
 						Close
 					</Button>
 					<Button
 						form="editModal"
 						variant="outlined"
 						sx={{ mb: "2vh", mt: { lg: "2vh" }, width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
-						onClick={(e) => {
-							props.handleFormClose();
-							e.preventDefault();
-							props.updateSubCategoryForm(props.title, props.description, props.price, props.image);
-							console.log(`Props.id = ${props.id}`);
-
-						}}
+						onClick={handleSubmit}
 					>
 						Update
+					</Button>
+					<Button
+						form="Modal"
+						variant="contained"
+						onClick={handleDelete}
+						sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
+					>
+						Delete
 					</Button>
 				</Box>
 			</Dialog >

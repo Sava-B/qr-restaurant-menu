@@ -193,7 +193,7 @@ const Dashboard = () => {
 						align="center"
 						sx={{ mb: "10vh" }}
 					>
-						ADD RESTAURANT
+						YOUR RESTAURANTS
 					</Typography>
 				</Paper>
 
