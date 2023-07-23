@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { Box, Dialog, DialogContent, DialogContentText, TextField } from "@mui/material";
+import {
+	Box,
+	Dialog,
+	DialogContent,
+	DialogContentText,
+	TextField,
+} from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
-
 
 function InsertSubCategory(props) {
 	const [title, setTitle] = useState("");
@@ -33,13 +38,31 @@ function InsertSubCategory(props) {
 				onClose={props.handleFormClose}
 				sx={{ maxWidth: "100%", maxHeight: "100%" }}
 			>
-				<DialogTitle variant="h3" color="primary.dark" alignSelf="center">Add New Product</DialogTitle>
-				<DialogContent sx={{ width: { xs: "60vw", lg: "20vw", } }}>
+				<DialogTitle
+					variant="h3"
+					color="primary.dark"
+					alignSelf="center"
+				>
+					Add New Product
+				</DialogTitle>
+				<DialogContent sx={{ width: { xs: "60vw", lg: "20vw" } }}>
 					<Box
-						sx={{ mb: "3vh", display: "flex", justifyContent: "start", flexDirection: "column", alignItems: "center" }}
+						sx={{
+							mb: "3vh",
+							display: "flex",
+							justifyContent: "start",
+							flexDirection: "column",
+							alignItems: "center",
+						}}
 						controlId="formTitle"
 					>
-						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
+						<DialogContentText
+							sx={{
+								my: "auto",
+								fontWeight: "bold",
+								pt: "2vh",
+							}}
+						>
 							Title
 						</DialogContentText>
 						<TextField
@@ -49,11 +72,22 @@ function InsertSubCategory(props) {
 							type="title"
 							Label="title"
 							placeholder="title"
-							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }}
-
+							sx={{
+								width: {
+									xs: "60vw",
+									md: "30vw",
+									lg: "10vw",
+								},
+							}}
 						/>
 
-						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
+						<DialogContentText
+							sx={{
+								my: "auto",
+								fontWeight: "bold",
+								pt: "2vh",
+							}}
+						>
 							Description
 						</DialogContentText>
 						<TextField
@@ -62,9 +96,22 @@ function InsertSubCategory(props) {
 							value={description}
 							type="text"
 							placeholder="description"
-							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
+							sx={{
+								width: {
+									xs: "60vw",
+									md: "30vw",
+									lg: "10vw",
+								},
+							}}
+						/>
 
-						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
+						<DialogContentText
+							sx={{
+								my: "auto",
+								fontWeight: "bold",
+								pt: "2vh",
+							}}
+						>
 							Price
 						</DialogContentText>
 						<TextField
@@ -72,9 +119,23 @@ function InsertSubCategory(props) {
 							value={price}
 							type="text"
 							placeholder="10"
-							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" } }} />
 
-						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh" }}>
+							sx={{
+								width: {
+									xs: "60vw",
+									md: "30vw",
+									lg: "10vw",
+								},
+							}}
+						/>
+
+						<DialogContentText
+							sx={{
+								my: "auto",
+								fontWeight: "bold",
+								pt: "2vh",
+							}}
+						>
 							Img URL
 						</DialogContentText>
 						<TextField
@@ -82,30 +143,59 @@ function InsertSubCategory(props) {
 							value={ImgURL}
 							type="url"
 							placeholder="ImgURL"
-							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "15vh" }} />
+							sx={{
+								width: {
+									xs: "60vw",
+									md: "30vw",
+									lg: "10vw",
+								},
+								pb: "15vh",
+							}}
+						/>
 					</Box>
 				</DialogContent>
-				<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-					<Button variant="outlined" sx={{ mb: "2vh", mt: "2vh", width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
-						onClick={props.handleFormClose}>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<Button
+						variant="outlined"
+						sx={{
+							mb: "2vh",
+							mt: "2vh",
+							width: { xs: "50vw", md: "40vw", lg: "8vw" },
+						}}
+						onClick={props.handleFormClose}
+					>
 						Close
 					</Button>
 
 					<Button
 						form="editModal"
 						variant="outlined"
-						sx={{ mb: "2vh", mt: { lg: "2vh" }, width: { xs: "50vw", md: "40vw", lg: "8vw" } }}
+						sx={{
+							mb: "2vh",
+							mt: { lg: "2vh" },
+							width: { xs: "50vw", md: "40vw", lg: "8vw" },
+						}}
 						onClick={(e) => {
 							e.preventDefault();
 							props.handleFormClose();
-							props.handleInsertNewSubCategory(title, description, price, ImgURL);
-
+							props.handleInsertNewSubCategory(
+								title,
+								description,
+								price,
+								ImgURL
+							);
 						}}
 					>
 						Update
 					</Button>
 				</Box>
-			</Dialog >
+			</Dialog>
 		</>
 	);
 }
