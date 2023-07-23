@@ -1,5 +1,6 @@
 :root {
-	--accent: #7a2c2c;
+
+	--accent: #C4B487;
 }
 
 /* Reset html */
@@ -44,10 +45,6 @@ code {
 
 /* Menu Builder */
 
-.menue_builder {
-	background-color: white;
-	height: 1000vh;
-}
 
 .retr_background_logo_container {
 	position: relative;

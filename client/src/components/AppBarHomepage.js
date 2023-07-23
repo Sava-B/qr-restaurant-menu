@@ -42,9 +42,9 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar sx={{ mb: "-6vh", height: "4.5vh", display: 'flex', justifyContent: 'column' }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar sx={{ height: "4.5vh", display: 'flex', justifyContent: 'column', width: '100%' }}>
+      <Container>
+        <Toolbar >
           <Box
             sx={{
               flexGrow: 1,

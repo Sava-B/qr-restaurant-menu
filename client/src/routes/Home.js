@@ -8,7 +8,7 @@ import ResponsiveAppBar from "../components/AppBarHomepage";
 import Button from "@mui/material/Button";
 import StickyFooter from "../components/StickyFooter";
 import HorizontalNonLinearStepper from "../components/Stepper";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const h1style = { color: "white", left: "30px" };
@@ -16,7 +16,7 @@ const h1style = { color: "white", left: "30px" };
 // Add light background, dark text
 
 const Home = () => (
-  <Box sx={{ pb: "10vh", mt: "8vh" }}>
+  <Container sx={{ pb: "10vh" }}>
     <div className="App">
       <link
         rel="stylesheet"
@@ -71,7 +71,7 @@ const Home = () => (
 
       <HorizontalNonLinearStepper />
     </div>
-  </Box>
+  </Container>
 );
 
 export default Home;
