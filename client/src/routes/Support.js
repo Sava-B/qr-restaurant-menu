@@ -104,7 +104,7 @@ export default function SupportPage() {
 							<Button
 								variant="contained"
 								sx={{ color: "primary.main" }}
-								style={{ backgroundColor: "#7a2c2c" }}
+								style={{ backgroundColor: "#C4B487" }}
 							>
 								Send
 							</Button>

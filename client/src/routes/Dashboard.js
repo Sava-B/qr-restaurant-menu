@@ -106,7 +106,7 @@ const Dashboard = () => {
 			{
 				label: "Revenue",
 				data: RevenueStats.map(({ revenue }) => revenue),
-				backgroundColor: ["#7a2c2c"],
+				backgroundColor: ["#C4B487"],
 				borderColor: "black",
 				borderWidth: 2,
 			},
@@ -119,7 +119,7 @@ const Dashboard = () => {
 			{
 				label: "Orders",
 				data: OrderStats.map((data) => data.orders),
-				backgroundColor: ["#7a2c2c"],
+				backgroundColor: ["#C4B487"],
 				borderColor: "black",
 				borderWidth: 2,
 			},
@@ -133,7 +133,7 @@ const Dashboard = () => {
 				label: "Clicks",
 				data: ClickStats.map((data) => data.clicks),
 				backgroundColor: [
-					"#7a2c2c",
+					"#C4B487",
 					"teal",
 					"white",
 					"black",
@@ -193,7 +193,7 @@ const Dashboard = () => {
 						align="center"
 						sx={{ mb: "10vh" }}
 					>
-						ADD RESTAURANT
+						YOUR RESTAURANTS
 					</Typography>
 				</Paper>
 

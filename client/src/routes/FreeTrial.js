@@ -107,7 +107,7 @@ export default function FreeTrialPage() {
           mb: "40vh",
           height: "100vh",
           ml: "0.3vw",
-          background: "linear-gradient(45deg, #7a2c2c 30%, #222 90%)",
+          background: "linear-gradient(45deg, #C4B487 30%, #222 90%)",
           width: "99vw",
           minWidth: "99vw",
           display: { xl: "flex", xs: "none" },

@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { login } from "../../axios/API";
-import Button from "@mui/material/Button";
+import { BasicButton } from "../../components"
+import { Children } from "react";
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
@@ -12,15 +12,17 @@ const LoginButton = () => {
   };
 
   return (
-    <Button
+    <BasicButton
       onClick={handleLogin}
-      style={{ color: "white", textAlign: "center" }}
+      style={{ textAlign: "center" }}
       sx={{
         display: "block",
       }}
-    >
-      Log In
-    </Button>
+      text="Sign In/Sign Up"
+      color="white"
+      size="30"
+    />
+
   );
 };
 

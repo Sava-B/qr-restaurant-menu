@@ -119,6 +119,7 @@ function InsertSubCategory(props) {
 							value={price}
 							type="text"
 							placeholder="10"
+
 							sx={{
 								width: {
 									xs: "60vw",

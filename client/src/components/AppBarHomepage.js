@@ -42,9 +42,9 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ mb: "-8vh" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar sx={{ height: "4.5vh", display: 'flex', justifyContent: 'column', width: '100%' }}>
+      <Container>
+        <Toolbar >
           <Box
             sx={{
               flexGrow: 1,
@@ -52,7 +52,7 @@ function ResponsiveAppBar() {
             }}
           >
             <IconButton
-              size="large"
+              size="medium"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -95,7 +95,7 @@ function ResponsiveAppBar() {
             {" "}
             <img
               sx={{ display: { xs: "none", md: "flex" }, mr: 1, ml: { xs: "-10" } }}
-              width={"27%"}
+              width={"18%"}
               src={QR}
               alt={"Menu maker app logo"}
             />
