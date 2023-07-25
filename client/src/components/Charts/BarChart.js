@@ -1,7 +1,7 @@
 import { Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 // import { Statistics } from "../../routes/DashboardStats";
-import { getRestaurants } from "../../axios/API";
+import { getRestaurants } from "../../lib/axios/API";
 
 export const BarChart = ({ chartData }) => {
 	const [dashboardStatistics, setDashboardStatistics] = useState([]);

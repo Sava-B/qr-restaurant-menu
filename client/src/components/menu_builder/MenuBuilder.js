@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 
-import CategoryCards from "./menu_builder/category/CategoryCards";
-import AddCategoryCard from "./menu_builder/category/AddCategoryCard"
-import Header from "./menu_builder/Header";
-import InsertSubCategory from "./menu_builder/sub_category/InsertSubCategory";
-import SubCategoryCard from "./menu_builder/sub_category/SubCategoryCard";
-import AddSubCategoryCard from "./menu_builder/sub_category/AddSubCategoryCard"
+import CategoryCards from "./category/CategoryCards";
+import AddCategoryCard from "./category/AddCategoryCard"
+import Header from "./Header";
+import InsertSubCategory from "./sub_category/InsertSubCategory";
+import SubCategoryCard from "./sub_category/SubCategoryCard";
+import AddSubCategoryCard from "./sub_category/AddSubCategoryCard"
 import { ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
-import { categoriesData } from "./menu_builder/dummyData";
+import { categoriesData } from "./dummyData";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import { theme } from "../routes/root";
+import { theme } from "../root";
 import {
   getItems,
   postItems
-} from "../axios/API";
+} from "../../lib/axios/API";
 
 
 function MenuBuilder() {

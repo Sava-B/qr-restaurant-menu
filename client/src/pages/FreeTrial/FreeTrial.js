@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
-import menuexampleinpng from "../menuexampleinpng.png";
+import menuexampleinpng from "../../assets/menuexampleinpng.png";
 import { Description, Support } from "@mui/icons-material";
-import ErrorPage from "../error-page";
+import ErrorPage from "../ErrorPage/error-page";
 import { Outlet, Link } from "react-router-dom";
 import {
   Card,
@@ -18,7 +18,7 @@ import {
 import { Box } from "@mui/material";
 import { display } from "@mui/system";
 import Button from "@mui/material/Button";
-import { AppButton } from "../components/AppButton";
+import { AppButton } from "../../components/buttons/AppButton";
 
 const features = [
   {

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { BarChart } from "../components/Charts/BarChart";
-import { LineChart } from "../components/Charts/LineChart";
+import { BarChart } from "../../components/Charts/BarChart";
+import { LineChart } from "../../components/Charts/LineChart";
 import "chart.js/auto";
 import Container from "@mui/material/Container";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -15,12 +15,12 @@ import {
 	getRevenuebyId,
 	getClicksbyId,
 	getOrdersbyId,
-} from "../axios/API";
+} from "../../lib/axios/API";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 
-import ViewRestaurants from "../components/dashboardRestaurants/RestaurantsView";
-import AddRestaurantCard from "../components/dashboardRestaurants/AddRestaurant";
+import ViewRestaurants from "./RestaurantsCard/RestaurantsView";
+import AddRestaurantCard from "./RestaurantsCard/AddRestaurant";
 import { Box } from "@mui/material";
 
 // Use axios to fetch the statistics from server;
