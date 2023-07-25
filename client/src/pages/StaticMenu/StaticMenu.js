@@ -4,27 +4,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { Support } from "@mui/icons-material";
-import ErrorPage from "../error-page";
+import ErrorPage from "../ErrorPage/error-page";
 import { Outlet, Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { Box, Button, Paper } from "@mui/material";
-import { AppButton } from "../components/AppButton";
+import { AppButton } from "../../components/buttons/AppButton";
 import axios from "axios";
 
-import StaticCategoryCards from "../components/menu_builder/category/StaticCategoryCards";
-import InsertCategory from "../components/menu_builder/category/InsertCategoryForm";
-import Header from "../components/menu_builder/Header";
-import InsertSubCategory from "../components/menu_builder/sub_category/InsertSubCategory";
-import StaticSubCategoryCards from "../components/menu_builder/sub_category/StaticSubCategoryCards";
+import StaticCategoryCards from "../../components/menu_builder/category/StaticCategoryCards";
+import InsertCategory from "../../components/menu_builder/category/InsertCategoryForm";
+import Header from "../../components/menu_builder/Header";
+import InsertSubCategory from "../../components/menu_builder/sub_category/InsertSubCategory";
+import StaticSubCategoryCards from "../../components/menu_builder/sub_category/StaticSubCategoryCards";
 import {
 	categoriesData,
 	subCategoriesData,
-} from "../components/menu_builder/dummyData";
+} from "../../components/menu_builder/dummyData";
 
 import {
 	getItems
-} from "../axios/API";
+} from "../../lib/axios/API";
 
 
 export default function StaticMenuPage() {

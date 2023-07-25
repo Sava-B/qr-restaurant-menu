@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import "../App.css";
-import QR from "../QR.svg";
+import "../../assets/App.css";
+import QR from "../../assets/QR.svg";
 import { useState } from "react";
 
-import { AppButton } from "../components/AppButton";
-import ResponsiveAppBar from "../components/AppBarHomepage";
+import { AppButton } from "../../components/buttons/AppButton";
+import ResponsiveAppBar from "../../components/AppBarHomepage";
 import Button from "@mui/material/Button";
-import StickyFooter from "../components/StickyFooter";
-import HorizontalNonLinearStepper from "../components/Stepper";
+import StickyFooter from "../../components/StickyFooter";
+import HorizontalNonLinearStepper from "../../components/Stepper";
 import { Typography, Box, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 

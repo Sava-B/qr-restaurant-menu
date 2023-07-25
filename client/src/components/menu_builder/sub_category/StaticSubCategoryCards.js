@@ -5,7 +5,7 @@ import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 import {
 	getItems
-} from "../../../axios/API";
+} from "../../../lib/axios/API";
 
 
 function StaticSubCategoryCards(props) {

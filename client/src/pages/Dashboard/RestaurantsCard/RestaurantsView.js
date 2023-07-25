@@ -7,7 +7,7 @@ import {
 	createRestaurants,
 	updateRestaurants,
 	deleteRestaurants,
-} from "../../axios/API";
+} from "../../../lib/axios/API";
 import { Box, Grid } from "@mui/material";
 
 function ViewRestaurants() {

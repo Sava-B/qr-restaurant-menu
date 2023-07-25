@@ -4,12 +4,12 @@
 // import { motion } from "framer-motion";
 // import Button from "@mui/material/Button";
 // import Home from "./Home";
-import ResponsiveAppBar from "../components/AppBarHomepage";
+import ResponsiveAppBar from "./AppBarHomepage";
 // import SignIn from "./SignIn";
 // import SupportPage from "./Support";
 // import ErrorPage from "../error-page";
 import { Outlet } from "react-router-dom";
-import StickyFooter from "../components/StickyFooter";
+import StickyFooter from "./StickyFooter";
 // import { AppBar } from "@mui/material";
 import { Box, Typography } from "@mui/material";
 
