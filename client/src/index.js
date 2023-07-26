@@ -16,7 +16,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import QRCodePage from "./pages/QR/qr";
 import StaticMenuPage from "./pages/StaticMenu/StaticMenu";
 import { Auth0Provider } from "@auth0/auth0-react";
-import { AuthGuard, Authenticate } from "./components";
+import { AuthGuard, Authenticate } from "./lib";
 
 const router = createBrowserRouter([
 	{
