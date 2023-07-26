@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import QR from "../assets/QR.svg";
 import { Link } from "react-router-dom";
-import { LoginButton, LogoutButton } from "./index.js";
+import { BasicButton, LoginButton, LogoutButton } from "./index.js";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const pages = ["Pricing", "Support", "Free Trial"];
@@ -120,15 +120,14 @@ function ResponsiveAppBar() {
             {!isAuthenticated ? (
               <LoginButton />
             ) : (
-              <div style={{ maxWidth: "100px" }}>
+              <Box style={{ maxWidth: "100px" }}>
                 <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ mt: 1 }}>
                     <Avatar alt={user.name} src={user.picture} />
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
+                  sx={{ mt: "45px", borderRadius: '16px' }}
                   anchorEl={anchorElUser}
                   anchorOrigin={{
                     vertical: "top",
@@ -147,24 +146,16 @@ function ResponsiveAppBar() {
                     <MenuItem
                       key={setting}
                       onClick={handleCloseUserMenu}
-                      sx={{
-                        bgcolor: "primary.verydark",
-                        p: 2,
-                        px: 3,
-                        mt: -1,
-                        mb: -1,
-                      }}
                     >
                       <Link to={setting} className="text-link">
                         {" "}
-                        <Typography textAlign="center" component={"span"}>
-                          {setting}
-                        </Typography>
+                        <BasicButton textAlign="center" text={setting}
+                          color="primary.verydark" component={"span"} />
                       </Link>
                     </MenuItem>
                   ))}
                 </Menu>
-              </div>
+              </Box>
             )}
           </Box>
         </Toolbar>

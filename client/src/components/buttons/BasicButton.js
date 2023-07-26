@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { Children } from "react";
 
-const BasicButton = ({ text, onClick, color, hoverColor, size }) => {
+const BasicButton = ({ text, onClick, color, hoverColor, size, marginX, marginY, }) => {
 
     return (
         <Button
@@ -13,6 +13,8 @@ const BasicButton = ({ text, onClick, color, hoverColor, size }) => {
                 maxHeight: '2.5rem',
                 border: '1px black solid',
                 borderRadius: '13px',
+                mx: `${marginX}rem`,
+                my: `${marginY}rem`,
             }}
             onClick={onClick}
         >
