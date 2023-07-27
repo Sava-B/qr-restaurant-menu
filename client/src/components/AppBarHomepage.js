@@ -37,8 +37,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ height: "4.5vh", display: 'flex', justifyContent: 'column', width: '100%' }} style={{ background: 'transparent', boxShadow: 'none' }}>
-      <Container>
+    <AppBar position="static" sx={{ height: "4.5vh", display: 'flex', justifyContent: 'center', width: '100%', alignContent: 'center' }} style={{ background: 'transparent', boxShadow: 'none' }}>
+      <Container sx={{ display: 'flex', justifyContent: 'center' }}>
         <Toolbar >
           <Box
             sx={{
@@ -97,21 +97,21 @@ function ResponsiveAppBar() {
           </Link>
 
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: '-6vw' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "white",
-                  display: "block",
+                  width: '7vw',
+                  color: "primary.verydark",
                   textAlign: "center",
                 }}
               >
                 <Link to={page} className="text-link">
                   {" "}
-                  <Typography textAlign="center" component={"span"}>
+                  <Typography textAlign="center" component={"span"} sx={{ color: 'primary.verydark', fontWeight: '500' }}>
                     {page}
                   </Typography>
                 </Link>
@@ -127,7 +127,7 @@ function ResponsiveAppBar() {
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: "45px", borderRadius: '16px' }}
+                  sx={{ mt: "45px" }}
                   anchorEl={anchorElUser}
                   anchorOrigin={{
                     vertical: "top",
@@ -143,16 +143,11 @@ function ResponsiveAppBar() {
                 >
                   <LogoutButton />
                   {settings.map((setting) => (
-                    <MenuItem
-                      key={setting}
-                      onClick={handleCloseUserMenu}
-                    >
-                      <Link to={setting} className="text-link">
-                        {" "}
-                        <BasicButton textAlign="center" text={setting}
-                          color="primary.verydark" component={"span"} />
-                      </Link>
-                    </MenuItem>
+                    <Link to={setting} className="text-link">
+                      {" "}
+                      <BasicButton textAlign="center" text={setting}
+                        color="primary.verydark" component={"span"} />
+                    </Link>
                   ))}
                 </Menu>
               </Box>

@@ -20,7 +20,7 @@ const LoginButton = () => {
       }}
       text="Sign In/Sign Up"
       color="primary.verydark"
-      size="30"
+      size="10"
       marginY='1'
     />
 
