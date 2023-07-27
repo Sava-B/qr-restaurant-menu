@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import QR from "../assets/QR.svg";
 import { Link } from "react-router-dom";
-import { LoginButton, LogoutButton } from "./index.js";
+import { BasicButton, LoginButton, LogoutButton } from "./index.js";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const pages = ["Pricing", "Support", "Free Trial"];
@@ -37,8 +37,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ height: "4.5vh", display: 'flex', justifyContent: 'column', width: '100%' }} style={{ background: 'transparent', boxShadow: 'none' }}>
-      <Container>
+    <AppBar position="static" sx={{ height: "4.5vh", display: 'flex', justifyContent: 'center', width: '100%', alignContent: 'center' }} style={{ background: 'transparent', boxShadow: 'none' }}>
+      <Container sx={{ display: 'flex', justifyContent: 'center' }}>
         <Toolbar >
           <Box
             sx={{
@@ -97,21 +97,21 @@ function ResponsiveAppBar() {
           </Link>
 
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: '-6vw' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "white",
-                  display: "block",
+                  width: '7vw',
+                  color: "primary.verydark",
                   textAlign: "center",
                 }}
               >
                 <Link to={page} className="text-link">
                   {" "}
-                  <Typography textAlign="center" component={"span"}>
+                  <Typography textAlign="center" component={"span"} sx={{ color: 'primary.verydark', fontWeight: '500' }}>
                     {page}
                   </Typography>
                 </Link>
@@ -120,15 +120,14 @@ function ResponsiveAppBar() {
             {!isAuthenticated ? (
               <LoginButton />
             ) : (
-              <div style={{ maxWidth: "100px" }}>
+              <Box style={{ maxWidth: "100px" }}>
                 <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ mt: 1 }}>
                     <Avatar alt={user.name} src={user.picture} />
                   </IconButton>
                 </Tooltip>
                 <Menu
                   sx={{ mt: "45px" }}
-                  id="menu-appbar"
                   anchorEl={anchorElUser}
                   anchorOrigin={{
                     vertical: "top",
@@ -144,27 +143,14 @@ function ResponsiveAppBar() {
                 >
                   <LogoutButton />
                   {settings.map((setting) => (
-                    <MenuItem
-                      key={setting}
-                      onClick={handleCloseUserMenu}
-                      sx={{
-                        bgcolor: "primary.verydark",
-                        p: 2,
-                        px: 3,
-                        mt: -1,
-                        mb: -1,
-                      }}
-                    >
-                      <Link to={setting} className="text-link">
-                        {" "}
-                        <Typography textAlign="center" component={"span"}>
-                          {setting}
-                        </Typography>
-                      </Link>
-                    </MenuItem>
+                    <Link to={setting} className="text-link">
+                      {" "}
+                      <BasicButton textAlign="center" text={setting}
+                        color="primary.verydark" component={"span"} />
+                    </Link>
                   ))}
                 </Menu>
-              </div>
+              </Box>
             )}
           </Box>
         </Toolbar>

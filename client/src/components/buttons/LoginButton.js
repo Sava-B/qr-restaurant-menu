@@ -19,8 +19,9 @@ const LoginButton = () => {
         display: "block",
       }}
       text="Sign In/Sign Up"
-      color="white"
-      size="30"
+      color="primary.verydark"
+      size="10"
+      marginY='1'
     />
 
   );

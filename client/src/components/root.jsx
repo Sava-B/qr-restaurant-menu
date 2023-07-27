@@ -20,10 +20,8 @@ export const theme = createTheme({
   palette: {
     primary: {
       background: "#D3D0C8",
-      // 00ccff
       main: "#C4B487",
       verydark: "#262524",
-      // grey: "#808080"
       grey: "#D3D0C8",
     },
     secondary: {
