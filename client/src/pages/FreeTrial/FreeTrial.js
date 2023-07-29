@@ -86,7 +86,7 @@ export default function FreeTrialPage() {
             >
               <Box sx={{ m: 1 }}>
                 {" "}
-                <Typography variant="h4" color="secondary.main" sx={{ p: 2 }}>
+                <Typography variant="h4" color="primary.verydark" sx={{ p: 2 }}>
                   {feature.title}
                 </Typography>
                 <Typography>{feature.description}</Typography>
@@ -111,7 +111,6 @@ export default function FreeTrialPage() {
           width: "99vw",
           minWidth: "99vw",
           display: { xl: "flex", xs: "none" },
-
         }}
       >
         <Box
