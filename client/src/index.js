@@ -17,55 +17,7 @@ import QRCodePage from "./pages/QR/qr";
 import StaticMenuPage from "./pages/StaticMenu/StaticMenu";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AuthGuard, Authenticate } from "./lib";
-
-const router = createBrowserRouter([
-	{
-		path: "/menu_builder",
-		element: <MenuBuilder />,
-		errorElement: <ErrorPage />,
-	},
-	{
-		path: "/",
-		element: <Root />,
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: "/Pricing",
-				element: <Pricing />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: "/Support",
-				element: <SupportPage />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: "/Free Trial",
-				element: <FreeTrialPage />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: "/Dashboard",
-				element: <AuthGuard component={Dashboard} />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: "/QR",
-				element: <QRCodePage />,
-				errorElement: <ErrorPage />,
-			},
-		],
-	},
-	{
-		path: "/static",
-		element: <StaticMenuPage />,
-	},
-]);
+import { router } from "./routes/router";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<Auth0Provider

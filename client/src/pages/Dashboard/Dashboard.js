@@ -157,7 +157,7 @@ const Dashboard = () => {
 				sx={{
 					bgcolor: "primary.grey",
 					width: "100vw",
-					height: "auto",
+					height: "100vh",
 				}}
 			>
 				<Typography
@@ -168,7 +168,7 @@ const Dashboard = () => {
 					sx={{ pt: "15vh", pb: "5vh", ml: "-4vw" }}
 					fontWeight={"bold"}
 				>
-					{user.name}'s Dashboard
+					{user.name}'s Restaurants
 				</Typography>
 
 				<Paper
@@ -197,114 +197,8 @@ const Dashboard = () => {
 					</Typography>
 				</Paper>
 
-				<Paper
-					elevation={20}
-					sx={{
-						height: "45vh",
-						width: "auto",
-						display: { xs: "none", md: "flex" },
-						flexDirection: "row",
-						flexGrow: "4",
-						flexWrap: "wrap",
-						pl: "1vw",
-						pr: "1vw",
-						ml: "-7.5vw",
-						justifyContent: "space-between",
-						alignSelf: "center",
-						bgcolor: "primary.verydark",
-						overflow: "hidden",
-						mb: "100px",
-					}}
-				>
-					<Paper
-						elevation={10}
-						sx={{ height: "20vh", mt: "12vh", ml: "3vw" }}
-					>
-						<BarChart chartData={RevenueChartData} />{" "}
-					</Paper>
 
-					<Paper
-						elevation={10}
-						sx={{ height: "20vh", mt: "12vh", pr: "1vw" }}
-					>
-						<BarChart chartData={orderChartData} />{" "}
-					</Paper>
 
-					<Paper
-						elevation={10}
-						sx={{
-							height: "20vh",
-							mt: "12vh",
-							mr: "3vw",
-							width: "12vw",
-						}}
-					>
-						<Typography
-							variant="h5"
-							align="center"
-							sx={{ m: "10", color: "primary.verydark" }}
-						>
-							Restaurants left
-						</Typography>
-						<Typography
-							variant="h1"
-							fontWeight={"bold"}
-							align="center"
-							sx={{ m: "10", color: "primary.verydark" }}
-						>
-							{menusLeft}{" "}
-						</Typography>
-						<Button
-							variant="contained"
-							sx={{ mt: "1vh", display: "center" }}
-							onClick={() => {
-								setMenusLeft(menusLeft - 1);
-							}}
-							component={Link}
-							to={"../restaurants"}
-						>
-							Make Restaurant
-						</Button>
-					</Paper>
-				</Paper>
-				<Paper
-					elevation={20}
-					align="center"
-					sx={{
-						height: "30vh",
-						width: "auto",
-						display: { xs: "none", md: "flex" },
-						flexDirection: "column",
-						justifyContent: "center",
-						alignContent: "space-around",
-						flexWrap: "wrap",
-						pl: "1vw",
-						pr: "1vw",
-						ml: "-7.5vw",
-						bgcolor: "primary.verydark",
-						overflow: "hidden",
-						mb: "100px",
-					}}
-				>
-					<Typography variant="h3" sx={{ mt: "-20" }}>
-						{" "}
-						Extra{" "}
-					</Typography>
-					<Paper
-						sx={{
-							my: 10,
-							align: "center",
-							position: "relative",
-							height: "20vh",
-							width: "20vw",
-						}}
-					>
-						<LineChart
-							chartData={clickChartData}
-							options={{ maintainAspectRatio: false }}
-						/>
-					</Paper>
-				</Paper>
 			</Container>
 		);
 	}
