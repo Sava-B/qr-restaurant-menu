@@ -37,9 +37,20 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ height: "4.5vh", display: 'flex', justifyContent: 'center', width: '100%', alignContent: 'center' }} style={{ background: 'transparent', boxShadow: 'none' }}>
-      <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Toolbar >
+    <AppBar
+      position="static"
+      sx={{
+        height: "4.5vh",
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        alignContent: "center",
+        pt: { xl: "1rem" },
+      }}
+      style={{ background: "transparent", boxShadow: "none" }}
+    >
+      <Container sx={{ display: "flex", justifyContent: "center" }}>
+        <Toolbar>
           <Box
             sx={{
               flexGrow: 1,
@@ -86,32 +97,45 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Link to={"/"} className="text-link" >
+          <Link to={"/"} className="text-link">
             {" "}
             <img
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1, ml: { xs: "-10" } }}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 1,
+                ml: { xs: "-10" },
+              }}
               width={"18%"}
               src={QR}
               alt={"Menu maker app logo"}
             />
           </Link>
 
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: '-6vw' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              ml: "-6vw",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  width: '7vw',
+                  width: "7vw",
                   color: "primary.verydark",
                   textAlign: "center",
                 }}
               >
                 <Link to={page} className="text-link">
                   {" "}
-                  <Typography textAlign="center" component={"span"} sx={{ color: 'primary.verydark', fontWeight: '500' }}>
+                  <Typography
+                    textAlign="center"
+                    component={"span"}
+                    sx={{ color: "primary.verydark", fontWeight: "500" }}
+                  >
                     {page}
                   </Typography>
                 </Link>
@@ -145,8 +169,12 @@ function ResponsiveAppBar() {
                   {settings.map((setting) => (
                     <Link to={setting} className="text-link">
                       {" "}
-                      <BasicButton textAlign="center" text={setting}
-                        color="primary.verydark" component={"span"} />
+                      <BasicButton
+                        textAlign="center"
+                        text={setting}
+                        color="primary.verydark"
+                        component={"span"}
+                      />
                     </Link>
                   ))}
                 </Menu>
@@ -156,7 +184,6 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
-
   );
 }
 
