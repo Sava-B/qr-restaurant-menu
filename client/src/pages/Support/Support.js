@@ -8,7 +8,7 @@
 // import { Outlet, Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import { Box, Button } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 
 export default function SupportPage() {
 	return (
@@ -26,22 +26,22 @@ export default function SupportPage() {
 					Support
 				</Typography>
 
-				<section class="faq-section">
-					<div class="faq-question">
-						<h3>How do we sign up?</h3>
-						<div class="faq-answer">
-							<p>
+				<Container class="faq-section">
+					<Box class="faq-question">
+						<Typography variant="h3">How do we sign up?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								Follow the instructions in the pricing
 								page. Contact our team if you are having
 								difficulties.
-							</p>
-						</div>
-					</div>
+							</Typography>
+						</Box>
+					</Box>
 
-					<div class="faq-question">
-						<h3>Where can we find the QR codes?</h3>
-						<div class="faq-answer">
-							<p>
+					<Box class="faq-question">
+						<Typography variant="h3">Where can we find the QR codes?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								{" "}
 								Once you created your menu, you will be
 								given a button to get a printable PDF of
@@ -49,31 +49,29 @@ export default function SupportPage() {
 								the QR codes, simply scan them and you
 								will be redirected to your menu as an
 								interactive web page.
-							</p>
-						</div>
-					</div>
+							</Typography>
+						</Box>
+					</Box>
 
-					<div class="faq-question">
-						<h3> What do we need to start?</h3>
-						<div class="faq-answer">
-							<p>
+					<Box class="faq-question">
+						<Typography variant="h3"> What do we need to start?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								All you need to start are the menu items
 								and their pictures. The rest we will
 								walk you through in the interactive web
 								menu builder.
-							</p>
-						</div>
-					</div>
-				</section>
+							</Typography>
+						</Box>
+					</Box>
+				</Container>
 				<Container sx={{ width: "70%" }}>
 					<Box className="contact">
-						<h2>Contact Us</h2>
-						<form action="submit-form.php" method="POST">
-							<label htmlFor="name">Name:</label>
-							<input
-								type="text"
-								className="name"
-								name="name"
+						<Typography variant="h2">Contact Us</Typography>
+						<TextField>
+							<TextField
+								value={'name'}
+								label="name"
 								required
 							/>
 
@@ -108,7 +106,7 @@ export default function SupportPage() {
 							>
 								Send
 							</Button>
-						</form>
+						</TextField>
 					</Box>
 				</Container>
 			</Container>
