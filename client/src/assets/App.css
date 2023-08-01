@@ -137,27 +137,6 @@ input {
   margin: auto;
 }
 
-.faq-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
-}
-
-/* Style for the FAQ question container */
-.faq-question {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 70%;
-  margin-bottom: 30px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color: #fff;
-}
-
 /* Style for the FAQ question */
 .faq-question h3 {
   margin-bottom: 10px;

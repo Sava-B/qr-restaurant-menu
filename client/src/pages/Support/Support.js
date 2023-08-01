@@ -1,33 +1,37 @@
-// import { useState } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import { motion } from "framer-motion";
-
-// import { Support } from "@mui/icons-material";
-// import ErrorPage from "../error-page";
-// import { Outlet, Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Card, TextField } from "@mui/material";
+import { BasicButton } from "../../components";
 
 export default function SupportPage() {
 	return (
-		<Typography bgcolor="primary.grey" sx={{ pt: "10vh", }}>
-			<Container className="supportBody">
+		<Container bgcolor="primary.grey" sx={{ pt: "10vh" }}>
+			<Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 				<Typography
-					component="h1"
 					variant="h2"
-					align="center"
-					color="primary.white"
-					gutterBottom
+					color="primary.verydark"
 					sx={{ pt: 5, pb: 5 }}
 					fontWeight={"bold"}
+					alignSelf="center"
 				>
 					Support
 				</Typography>
 
-				<Container class="faq-section">
-					<Box class="faq-question">
+				<Container sx={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					padding: '50px'
+				}}>
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
 						<Typography variant="h3">How do we sign up?</Typography>
 						<Box class="faq-answer">
 							<Typography variant="p">
@@ -36,9 +40,17 @@ export default function SupportPage() {
 								difficulties.
 							</Typography>
 						</Box>
-					</Box>
+					</Card>
 
-					<Box class="faq-question">
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
 						<Typography variant="h3">Where can we find the QR codes?</Typography>
 						<Box class="faq-answer">
 							<Typography variant="p">
@@ -51,9 +63,18 @@ export default function SupportPage() {
 								interactive web page.
 							</Typography>
 						</Box>
-					</Box>
+					</Card>
 
-					<Box class="faq-question">
+
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
 						<Typography variant="h3"> What do we need to start?</Typography>
 						<Box class="faq-answer">
 							<Typography variant="p">
@@ -63,53 +84,43 @@ export default function SupportPage() {
 								menu builder.
 							</Typography>
 						</Box>
-					</Box>
+					</Card>
 				</Container>
-				<Container sx={{ width: "70%" }}>
-					<Box className="contact">
-						<Typography variant="h2">Contact Us</Typography>
-						<TextField>
-							<TextField
-								value={'name'}
-								label="name"
-								required
-							/>
 
-							<label htmlFor="email">Email:</label>
-							<input
-								type="email"
-								className="email"
-								name="email"
-								required
-							/>
-
-							<label htmlFor="subject">Subject:</label>
-							<input
-								type="text"
-								className="subject"
-								name="subject"
-								required
-							/>
-
-							<label htmlFor="message">Message:</label>
-							<textarea
-								className="message"
-								name="message"
-								required
-							></textarea>
-
-							{/* editing the sx prop didn"t work for some reason, added inline style instead */}
-							<Button
-								variant="contained"
-								sx={{ color: "primary.main" }}
-								style={{ backgroundColor: "#C4B487" }}
-							>
-								Send
-							</Button>
-						</TextField>
+				<Container sx={{ width: "100%", alignSelf: 'center' }}>
+					<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+						<Typography variant="h2" alignSelf="center" sx={{ pb: '5vh' }}
+						>Contact Us</Typography>
+						<TextField
+							label="name"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", }}
+						/>
+						<TextField
+							label="email"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<TextField
+							label="subject"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<TextField
+							label="message"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pr: "2vw" }}
+						/>
+						<BasicButton
+							alignSelf="center"
+							style={{ textAlign: "center", alignSelf: 'center' }}
+							sx={{
+								display: "block",
+							}}
+							text="SEND"
+							color="primary.verydark"
+							size="40"
+							marginY='3'
+						/>
 					</Box>
 				</Container>
 			</Container>
-		</Typography>
+		</Container >
 	);
 }
