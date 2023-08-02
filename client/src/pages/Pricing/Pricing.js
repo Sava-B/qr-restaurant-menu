@@ -15,7 +15,6 @@ import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
 
-
 const tiers = [
   {
     title: "Free",
@@ -79,7 +78,12 @@ function PricingContent() {
   return (
     <React.Fragment>
       <Container
-        sx={{ pt: "10vh", bgcolor: "primary.grey", width: "auto", height: { xs: "100%", xl: "100vh" } }}
+        sx={{
+          pt: "10vh",
+          bgcolor: "primary.grey",
+          width: "auto",
+          height: { xs: "100%", xl: "100%" },
+        }}
       >
         <Typography bgcolor="primary.grey" component={"span"}>
           <AppBar
@@ -122,7 +126,7 @@ function PricingContent() {
               container
               spacing={5}
               alignItems="flex-end"
-              color="primary.white"
+              color="primary.main"
             >
               {tiers.map((tier) => (
                 // Enterprise card is full width at sm breakpoint
