@@ -7,6 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 
 function InsertRestaurant({ show, closeForm, returnRestauraunts }) {
 	const [title, setTitle] = useState("");
+	const [image, setImage] = useState("")
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -33,6 +34,17 @@ function InsertRestaurant({ show, closeForm, returnRestauraunts }) {
 								setTitle(e.target.value)
 							}
 							label="title"
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh", mr: "2vw" }}>
+							Cover Image
+						</DialogContentText>
+						<TextField
+							value={image}
+							onChange={(e) =>
+								setImage(e.target.value)
+							}
+							label="image URL"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
 						/>
 					</Box>

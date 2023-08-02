@@ -43,7 +43,6 @@ function ViewRestaurants() {
 			const response = await createRestaurants(data, token);
 			if (response.status === 201) {
 				const restaurant = response.data;
-
 				setRestaurants([...restaurants, restaurant]);
 			} else {
 				return;
@@ -103,16 +102,20 @@ function ViewRestaurants() {
 			<Grid container spacing={2}>
 				{restaurants.map((restaurant) => {
 					return (
-						<Grid item xs={4} key={restaurant.id}>
-							<RestaurantCards
-								id={restaurant.id}
-								resName={restaurant.name}
-								updateRestaurants={updateRestaurant}
-								handleDelete={() =>
-									handleDelete(restaurant.id)
-								}
-							/>
-						</Grid>
+						<>
+							<Grid item xs={4} key={restaurant.id}>
+								<RestaurantCards
+									id={restaurant.id}
+									resName={restaurant.name}
+									resImage={restaurant.image}
+									updateRestaurants={updateRestaurant}
+									handleDelete={() =>
+										handleDelete(restaurant.id)
+									}
+								/>
+							</Grid>
+						</>
+
 					);
 				})}
 				<Grid item xs>
