@@ -11,8 +11,10 @@ function EditRestaurantForm({
 	closeForm,
 	updateRestaurants,
 	handleDelete,
+	resImage
 }) {
 	const [name, setName] = useState(resName);
+	const [image, setImage] = useState(resImage);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -43,6 +45,17 @@ function EditRestaurantForm({
 								setName(e.target.value)
 							}
 							label="title"
+							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<DialogContentText sx={{ my: "auto", fontWeight: "bold", pt: "2vh", mr: "2vw" }}>
+							{image}
+						</DialogContentText>
+						<TextField
+							value={image}
+							onChange={(e) =>
+								setImage(e.target.value)
+							}
+							label="Image URL"
 							sx={{ width: { xs: "60vw", md: "30vw", lg: "10vw" }, pb: "2vh", pr: "2vw" }}
 						/>
 					</Box>

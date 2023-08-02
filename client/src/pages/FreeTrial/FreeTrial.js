@@ -80,8 +80,9 @@ export default function FreeTrialPage() {
                 mt: "4vh",
                 pb: { xl: "-10vh" },
                 display: "grid",
-                bgcolor: "primary.background",
+                bgcolor: "primary.main",
                 width: 400,
+                borderRadius: '20px'
               }}
             >
               <Box sx={{ m: 1 }}>

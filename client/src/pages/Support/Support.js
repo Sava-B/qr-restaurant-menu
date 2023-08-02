@@ -1,47 +1,59 @@
-// import { useState } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import { motion } from "framer-motion";
-
-// import { Support } from "@mui/icons-material";
-// import ErrorPage from "../error-page";
-// import { Outlet, Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import { Box, Button } from "@mui/material";
+import { Box, Card, TextField } from "@mui/material";
+import { BasicButton } from "../../components";
 
 export default function SupportPage() {
 	return (
-		<Typography bgcolor="primary.grey" sx={{ pt: "10vh", }}>
-			<Container className="supportBody">
+		<Container bgcolor="primary.grey" sx={{ pt: "10vh" }}>
+			<Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 				<Typography
-					component="h1"
 					variant="h2"
-					align="center"
-					color="primary.white"
-					gutterBottom
+					color="primary.verydark"
 					sx={{ pt: 5, pb: 5 }}
 					fontWeight={"bold"}
+					alignSelf="center"
 				>
 					Support
 				</Typography>
 
-				<section class="faq-section">
-					<div class="faq-question">
-						<h3>How do we sign up?</h3>
-						<div class="faq-answer">
-							<p>
+				<Container sx={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					padding: '50px'
+				}}>
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
+						<Typography variant="h3">How do we sign up?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								Follow the instructions in the pricing
 								page. Contact our team if you are having
 								difficulties.
-							</p>
-						</div>
-					</div>
+							</Typography>
+						</Box>
+					</Card>
 
-					<div class="faq-question">
-						<h3>Where can we find the QR codes?</h3>
-						<div class="faq-answer">
-							<p>
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
+						<Typography variant="h3">Where can we find the QR codes?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								{" "}
 								Once you created your menu, you will be
 								given a button to get a printable PDF of
@@ -49,69 +61,66 @@ export default function SupportPage() {
 								the QR codes, simply scan them and you
 								will be redirected to your menu as an
 								interactive web page.
-							</p>
-						</div>
-					</div>
+							</Typography>
+						</Box>
+					</Card>
 
-					<div class="faq-question">
-						<h3> What do we need to start?</h3>
-						<div class="faq-answer">
-							<p>
+
+					<Card elevation={20} sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						textAlign: 'center',
+						width: '100%',
+						mb: '30px',
+						padding: '30px',
+					}}>
+						<Typography variant="h3"> What do we need to start?</Typography>
+						<Box class="faq-answer">
+							<Typography variant="p">
 								All you need to start are the menu items
 								and their pictures. The rest we will
 								walk you through in the interactive web
 								menu builder.
-							</p>
-						</div>
-					</div>
-				</section>
-				<Container sx={{ width: "70%" }}>
-					<Box className="contact">
-						<h2>Contact Us</h2>
-						<form action="submit-form.php" method="POST">
-							<label htmlFor="name">Name:</label>
-							<input
-								type="text"
-								className="name"
-								name="name"
-								required
-							/>
+							</Typography>
+						</Box>
+					</Card>
+				</Container>
 
-							<label htmlFor="email">Email:</label>
-							<input
-								type="email"
-								className="email"
-								name="email"
-								required
-							/>
-
-							<label htmlFor="subject">Subject:</label>
-							<input
-								type="text"
-								className="subject"
-								name="subject"
-								required
-							/>
-
-							<label htmlFor="message">Message:</label>
-							<textarea
-								className="message"
-								name="message"
-								required
-							></textarea>
-
-							{/* editing the sx prop didn"t work for some reason, added inline style instead */}
-							<Button
-								variant="contained"
-								sx={{ color: "primary.main" }}
-								style={{ backgroundColor: "#C4B487" }}
-							>
-								Send
-							</Button>
-						</form>
+				<Container sx={{ width: "100%", alignSelf: 'center' }}>
+					<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+						<Typography variant="h2" alignSelf="center" sx={{ pb: '5vh' }}
+						>Contact Us</Typography>
+						<TextField
+							label="name"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", }}
+						/>
+						<TextField
+							label="email"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<TextField
+							label="subject"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pb: "2vh", pr: "2vw" }}
+						/>
+						<TextField
+							label="message"
+							sx={{ width: { xs: "50vw", md: "40vw", lg: "30vw" }, pr: "2vw" }}
+						/>
+						<BasicButton
+							alignSelf="center"
+							style={{ textAlign: "center", alignSelf: 'center' }}
+							sx={{
+								display: "block",
+							}}
+							text="SEND"
+							color="primary.verydark"
+							size="40"
+							marginY='3'
+						/>
 					</Box>
 				</Container>
 			</Container>
-		</Typography>
+		</Container >
 	);
 }

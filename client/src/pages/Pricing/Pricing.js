@@ -140,11 +140,16 @@ function PricingContent() {
                   <Card variant="outlined">
                     <CardHeader
                       title={tier.title}
+                      titleColor="primary.main"
                       subheader={tier.subheader}
                       titleTypographyProps={{ align: "center" }}
                       action={tier.title === "Pro" ? <StarIcon /> : null}
                       subheaderTypographyProps={{
                         align: "center",
+                      }}
+                      sx={{
+                        color: 'primary.light',
+
                       }}
                     />
                     <CardContent>
