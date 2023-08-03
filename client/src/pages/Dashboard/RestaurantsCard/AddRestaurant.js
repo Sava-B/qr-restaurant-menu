@@ -13,7 +13,7 @@ function AddRestaurantCard({ returnRestauraunts }) {
 		<Box sx={{ textAlign: "center" }}>
 			<IoIosAddCircleOutline
 				style={{
-					fontSize: "3rem",
+					fontSize: "10rem",
 					color: "#FFFFFF",
 				}}
 				onClick={showForm}
