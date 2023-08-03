@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import EditRestaurantForm from "./EditRestaurantForm";
 import { Box, Card, Typography } from "@mui/material";
+import { FiXCircle, FiEdit } from "react-icons/fi"
+import { Link } from "react-router-dom";
+
 
 function RestaurantCards({ id, resName, resImage, updateRestaurants, handleDelete }) {
 	const [showEditModal, setShowEditModal] = useState(false);
 
 	const handleShow = () => setShowEditModal(true);
 	const handleClose = () => setShowEditModal(false);
+
+	const handleEditMenu = () => {
+
+	}
 
 	return (
 		<Card sx={{ mt: '3vh' }} >
@@ -17,6 +24,10 @@ function RestaurantCards({ id, resName, resImage, updateRestaurants, handleDelet
 			>
 				{resName}
 			</Typography>
+			<FiXCircle style={{ paddingRight: '3vw', marginLeft: '1rem', fontSize: '30' }} onClick={handleDelete} />
+			<Link to={'../menu_builder'}>
+				<FiEdit onClick={handleEditMenu} style={{ paddingRight: '3vw', marginLeft: '1rem', fontSize: '30' }} />
+			</Link>
 			<EditRestaurantForm
 				id={id}
 				resName={resName}
